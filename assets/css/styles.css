@@ -95,16 +95,19 @@ body {
   letter-spacing: 2px;
   text-shadow: var(--glow);
   cursor: pointer;
-  perspective: 1000px;
 }
 
 .logo-3d {
   width: 130px;
-  height: 130px;
+  height: auto;          /* prevents vertical stretching */
+  aspect-ratio: 1 / 1;   /* keeps it square */
   display: block;
+  object-fit: contain;
+
   animation: rotateLogo 6s infinite linear;
   filter: drop-shadow(0 0 8px rgba(206, 224, 86, 0.6));
   transition: filter 0.3s ease;
+  flex-shrink: 0;
 }
 
 .logo:hover .logo-3d {
