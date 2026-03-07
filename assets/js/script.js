@@ -217,17 +217,25 @@ if (canvas) {
   }
 
   function connect() {
+    // Check current theme
+    const isLightMode = document.documentElement.classList.contains("light-mode");
+
     for (let a = 0; a < particlesArray.length; a++) {
       for (let b = a; b < particlesArray.length; b++) {
-        let distance =
-          (particlesArray[a].x - particlesArray[b].x) *
-            (particlesArray[a].x - particlesArray[b].x) +
-          (particlesArray[a].y - particlesArray[b].y) *
-            (particlesArray[a].y - particlesArray[b].y);
+        let dx = particlesArray[a].x - particlesArray[b].x;
+        let dy = particlesArray[a].y - particlesArray[b].y;
+        let distance = dx * dx + dy * dy;
+
         if (distance < (canvas.width / 7) * (canvas.height / 7)) {
           let opacityValue = 1 - distance / 20000;
-          // Accent Lime lines using RGB
-          ctx.strokeStyle = `rgba(206, 224, 86, ${opacityValue})`; 
+
+          // Change line color based on theme
+          if (isLightMode) {
+            ctx.strokeStyle = `rgba(0, 0, 0, ${opacityValue})`; // black for light mode
+          } else {
+            ctx.strokeStyle = `rgba(206, 224, 86, ${opacityValue})`; // lime for dark mode
+          }
+
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(particlesArray[a].x, particlesArray[a].y);

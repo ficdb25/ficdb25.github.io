@@ -98,7 +98,7 @@ body {
 }
 
 .logo-3d {
-  width: 130px;
+  width: 50px;
   height: auto;          /* prevents vertical stretching */
   aspect-ratio: 1 / 1;   /* keeps it square */
   display: block;
