@@ -3,132 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CNN Multiplier Architecture | Pakistan Semiconductor Summit '26</title>
+  <title>Efficient CNN Multiplier Architecture | FAST ICD Batch 2025</title>
+  <meta name="description" content="High-performance, energy-efficient CNN multiplier architecture using Radix-4 Booth encoding and 4:2 compressors for real-time AI inference.">
   <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/cnn_styles.css">
+  <link rel="icon" type="image/png" href="../assets/images/Icon.png">
 </head>
 <body>
-
 <!-- Navbar -->
 <nav class="navbar">
   <div class="container nav-container">
-    <a href="../index.html" class="logo">Pakistan Semiconductor Summit '26</a>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../assets/images/Icon.png" alt="Summit Logo" class="logo-3d">
+      </a>
+    </div>
     <ul class="nav-links">
       <li><a href="../index.html#home" class="nav-link">Home</a></li>
-      <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+      <li><a href="../index.html#about" class="nav-link">Summit</a></li>
+      <li><a href="../index.html#projects" class="nav-link">Tapeout Projects</a></li>
       <li><a href="../index.html#faculty" class="nav-link">Faculty</a></li>
       <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
     </ul>
+    <div class="theme-toggle" id="themeToggle">
+      <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg class="moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" stroke="currentColor" stroke-width="1"/></svg>
+    </div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
   </div>
 </nav>
 
-<!-- Hero / Title Section -->
-<section class="project-hero">
-  <div class="container">
-    <h1>Efficient Multiplier Architectures for CNN-Based Image Processor</h1>
-    <p class="subtitle">Focusing on Modified Booth Encoding (MBE) and 4-to-2 compressor-based hardware acceleration for high-performance AI implementations.</p>
+<!-- Project Hero -->
+<section class="hero">
+  <canvas id="cnn-hero-canvas"></canvas>
+  <div class="container hero-container">
+    <div class="hero-content">
+      <h1 class="hero-title">Efficient CNN Multiplier Architecture</h1>
+      <p class="hero-subtitle">High-Performance & Energy-Efficient AI Accelerator</p>
+      <p class="hero-description">
+        An AI Accelerator that helps edge devices compute what it offloaded to different servers.
+      </p>
+      <div class="hero-buttons">
+        <a href="../index.html#projects" class="btn btn-secondary">Back to Projects</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Abstract / Overview -->
-<section class="project-overview">
+<!-- Problem Statement -->
+<section class="about">
   <div class="container">
-    <h2>Abstract</h2>
+    <h2 class="section-title">Problem Statement</h2>
     <p>
-      The Convolutional Neural Network (CNN) achieves high accuracy and is widely used in image-related applications.  
-      Recent evolution of CNN-based AI applications has made their hardware implementation a challenging task. Efficient CNN accelerator architectures require optimization in processing elements (PEs), especially the multiplier and adder units.  
-      This research presents strategies to optimize the multipliers and typical adder trees, improving CNN system performance, reducing hardware resource usage, and enhancing power efficiency.
+      Convolutional Neural Networks (CNNs) excel in image processing but are computationally expensive. Over 90% of computation comes from Multiply-Accumulate (MAC) operations. Conventional multipliers consume excessive power, occupy large silicon area, and suffer from high critical path delays. <br>
+      Edge devices typically offload this compute to a server and wait for the output. This not only increased the latency, but also damages the privacy of the individial. Why not keep everything in house and respect people's time, energy and privacy?
     </p>
   </div>
 </section>
 
-<!-- Introduction -->
-<section class="project-introduction">
+<!-- Solution -->
+<section class="projects">
   <div class="container">
-    <h2>Introduction</h2>
+    <h2 class="section-title">Our Solution</h2>
     <p>
-      Hardware customization for CNN accelerators remains a challenging problem due to the bulky nature of MAC components and delays in conventional adder trees.  
-      The proposed work designs a Modified Booth Encoding (MBE) multiplier to replace conventional MAC units on FPGA, later intended for ASIC implementation.  
-      4-to-2 compressors are used instead of typical adder trees to reduce critical path delay, significantly lowering hardware consumption while maintaining computational throughput.
+      We designed an efficient hardware multiplier architecture for CNN-based image processors using:
     </p>
-  </div>
-</section>
-
-<!-- Methodology -->
-<section class="project-methodology">
-  <div class="container">
-    <h2>Methodology</h2>
-    <ul>
-      <li>Design of Modified Booth Encoding (MBE) multipliers to efficiently generate partial products.</li>
-      <li>Replacement of conventional adder trees with 4-to-2 compressor-based summation to reduce delays.</li>
-      <li>Simulation and verification of RTL for FPGA deployment.</li>
-      <li>Evaluation of area, power, and performance against state-of-the-art implementations.</li>
-      <li>Integration into CNN accelerator hardware for image processing applications.</li>
+    <ul class="project-highlights">
+      <li>Radix-4 Booth Encoding to reduce partial products by 50%</li>
+      <li>High-speed 4:2 Compressor Trees to shorten critical path delay</li>
+      <li>SRAM Memory Tiling for reduced memory bandwidth and faster computation</li>
     </ul>
   </div>
 </section>
 
-<!-- Results / Achievements -->
-<section class="project-results">
+<!-- Hardware Pipeline -->
+<section class="skills">
   <div class="container">
-    <h2>Results & Benefits</h2>
-    <ul>
-      <li>Significant reduction in hardware resource consumption.</li>
-      <li>Faster execution of convolution operations in the PE unit.</li>
-      <li>Power-efficient multiplier architecture suitable for AI image processors.</li>
-      <li>Flexible for FPGA prototyping and later ASIC deployment.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- References -->
-<section class="project-references">
-  <div class="container">
-    <h2>References</h2>
-    <ol>
-      <li>S. Dargan, M. Kumar, M. R. Ayyagari, and G. Kumar, “A Survey of Deep Learning and Its Applications: A New Paradigm to Machine Learning,” Arch. Comput. Methods Eng., vol. 27, no. 4, pp. 1071–1092, 2020, doi: 10.1007/s11831-019-09344-w.</li>
-      <li>W. Xie, C. Zhang, Y. Zhang, C. Hu, H. Jiang, and Z. Wang, “An Energy-Efficient FPGA-Based Embedded System for CNN Application,” 2018 IEEE Int. Conf. Electron Devices Solid State Circuits, EDSSC 2018, Oct. 2018, doi: 10.1109/EDSSC.2018.8487057.</li>
-      <li>F. U. D. Farrukh, T. Xie, C. Zhang, and Z. Wang, “Optimization for Efficient Hardware Implementation of CNN on FPGA,” Proc. 2018 IEEE Int. Conf. Integr. Circuits, Technol. Appl. ICTA 2018, pp. 88–89, Jul. 2018, doi: 10.1109/CICTA.2018.8706067.</li>
-      <li>T. Kowsalya, “A novel cognitive Wallace compressor based multi operand adders in CNN architecture for FPGA,” J. Ambient Intell. Humaniz. Comput., vol. 12, no. 7, pp. 7263–7271, Aug. 2020, doi: 10.1007/s12652-020-02402-3.</li>
-      <li>F. U. D. Farrukh et al., “Power Efficient Tiny Yolo CNN using Reduced Hardware Resources based on Booth Multiplier and WALLACE Tree Adders,” IEEE Open J. Circuits Syst., pp. 1–1, Jul. 2020, doi: 10.1109/ojcas.2020.3007334.</li>
-      <li>Y. E. Kim, J. O. Yoon, K. J. Cho, J. G. Chung, S. I. Cho, and S. S. Choi, “Efficient design of modified Booth multipliers for predetermined coefficients,” Proc. - IEEE Int. Symp. Circuits Syst., pp. 2717–2720, 2006, doi: 10.1109/ISCAS.2006.1693185.</li>
+    <h2 class="section-title">Hardware Processing Pipeline</h2>
+    <ol class="skill-items">
+      <li>Input Image → Preprocessing (224x224 RGB, Int8)</li>
+      <li>SRAM Tiling → Fetch initial 3x3 block and reuse cached data</li>
+      <li>Convolution → Booth Encoding → 4:2 Compressor → Final CPA Sum</li>
+      <li>Pooling → Downsampling → Dense Matrix Multiplication → Softmax Probabilities</li>
+      <li>Output → Real-time classification (e.g., Zebra: 98%)</li>
     </ol>
   </div>
 </section>
 
-<!-- Team -->
-<section class="project-team">
+<!-- Benefits -->
+<section class="about">
   <div class="container">
-    <h2>Team</h2>
-    <h3>Project Members</h3>
-    <ul class="team-members">
-      <li>Osama Anees Mirza</li>
-      <li>Muhammad Mirza (Embedded Edge Academy)</li>
-      <li>Salman Qazi</li>
-      <li>Eeman (with a Double E)</li>
-      <li>Kousar Gul</li>
-      <li>Muhammad Awab Younas</li>
-      <li>Muhammad Ahmad</li>
-      <li>Fajar Waseem</li>
-      <li>Sana Nazir</li>
-      <li>Umm e Kulsoom Hospital</li>
-    </ul>
-
-    <h3>Supervisors</h3>
-    <ul class="team-supervisors">
-      <li>Sir Hasan Saif</li>
-      <li>Sir Rashid Ramzan</li>
-      <li>Sir Usman</li>
-      <li>Sir Usman The Second</li>
+    <h2 class="section-title">Architecture Benefits</h2>
+    <ul class="project-highlights">
+      <li><strong>Memory Tiling:</strong> Reuses local pixel blocks in SRAM to reduce DRAM fetches.</li>
+      <li><strong>Radix-4 Booth Encoding:</strong> Cuts partial products by half compared to standard multipliers.</li>
+      <li><strong>4:2 Compressor Trees:</strong> Condenses four inputs into two outputs, shortening critical path.</li>
     </ul>
   </div>
 </section>
 
-<!-- Back Button -->
-<section class="project-back">
+<!-- Supervisors -->
+<section class="skills">
   <div class="container">
-    <a href="../index.html#projects" class="btn btn-primary">Back to Projects</a>
+    <h2 class="section-title">Project Supervisors</h2>
+    <div class="skills-grid">
+      <div class="skill-category interactive-card"><h3>Dr. Khurram Javed</h3></div>
+      <div class="skill-category interactive-card"><h3>Dr. Hassan Saif</h3></div>
+      <div class="skill-category interactive-card"><h3>Dr. Rashid Ramzan</h3></div>
+      <div class="skill-category interactive-card"><h3>Usman Gul</h3></div>
+      <div class="skill-category interactive-card"><h3>Usman Azhar</h3></div>
+    </div>
   </div>
 </section>
 
+<!-- Engineering Team -->
+<section class="skills">
+  <div class="container">
+    <h2 class="section-title">Engineering Team</h2>
+    <div class="skills-grid">
+      <div class="skill-category interactive-card"><h3>Ahmad Shaban</h3></div>
+      <div class="skill-category interactive-card"><h3>Awab Younas</h3></div>
+      <div class="skill-category interactive-card"><h3>Eeman</h3></div>
+      <div class="skill-category interactive-card"><h3>Fajar Waseem</h3></div>
+      <div class="skill-category interactive-card"><h3>Humail Nawaz</h3></div>
+      <div class="skill-category interactive-card"><h3>Kausar Gul</h3></div>
+      <div class="skill-category interactive-card"><h3>Muhammad Mirza</h3></div>
+      <div class="skill-category interactive-card"><h3>Osama Mirza</h3></div>
+      <div class="skill-category interactive-card"><h3>Salman Qazi</h3></div>
+      <div class="skill-category interactive-card"><h3>Sana Nazir</h3></div>
+      <div class="skill-category interactive-card"><h3>Ume Kalsoom</h3></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 Efficient Multiplier Architecture Project. Developed for CNN Hardware Optimization.</p>
+    <p>IC Design Lab, FAST-NU Islamabad</p>
+  </div>
+</footer>
+
+<script src="../assets/js/script.js"></script>
 </body>
 </html>

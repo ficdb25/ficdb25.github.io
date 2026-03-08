@@ -265,6 +265,181 @@ if (canvas) {
   animate();
 }
 
+
+
+// ==================== CNN HERO BACKGROUND ==================== //
+const cnnCanvas = document.getElementById("cnn-hero-canvas");
+
+if (cnnCanvas) {
+  const ctx = cnnCanvas.getContext("2d");
+
+  let layers = [];
+  let paddingX = 0;
+  let paddingY = 0;
+  let nodes = [];
+  let activeNodes = []; // array of arrays per layer to track active nodes
+  let activeTimers = []; // timers per active node
+
+  function setLayers() {
+    if (window.innerWidth < 768) { // mobile/tablet
+      layers = [8, 6, 2];
+      paddingX = 10;
+      paddingY = 20;
+    } else { // desktop
+      layers = [18, 16, 14, 12, 10, 8, 6, 4];
+      paddingX = 20;
+      paddingY = 0;
+    }
+  }
+
+  function initCNN() {
+    nodes = [];
+    const layerSpacing = (cnnCanvas.width - paddingX * 2) / (layers.length - 1);
+
+    for (let l = 0; l < layers.length; l++) {
+      const layerNodes = [];
+      const nodeSpacing = (cnnCanvas.height - 2 * paddingY) / (layers[l] + 1);
+
+      for (let n = 0; n < layers[l]; n++) {
+        const x = paddingX + l * layerSpacing;
+        const y = paddingY + (n + 1) * nodeSpacing + (Math.random() - 0.5) * 20;
+
+        layerNodes.push({
+          x: x,
+          y: y,
+          baseY: y,
+          pulse: Math.random() * Math.PI * 2,
+          moveOffset: Math.random() * 20,
+        });
+      }
+      nodes.push(layerNodes);
+    }
+
+    selectActiveNodes();
+  }
+
+  function selectActiveNodes() {
+    activeNodes = [];
+    activeTimers = [];
+
+    for (let l = 0; l < nodes.length; l++) {
+      let count = 0;
+      if (l === nodes.length - 1) {
+        // last layer always 1
+        count = 1;
+      } else {
+        // random number of active nodes per layer (1 to ~30% of layer)
+        count = Math.max(1, Math.floor(Math.random() * (nodes[l].length * 0.3) + 1));
+      }
+
+      // pick unique random indices for this layer
+      const indices = [];
+      while (indices.length < count) {
+        const idx = Math.floor(Math.random() * nodes[l].length);
+        if (!indices.includes(idx)) indices.push(idx);
+      }
+      activeNodes.push(indices);
+      activeTimers.push(indices.map(() => 0)); // init timers
+    }
+  }
+
+  function drawConnections() {
+    const isLightMode = document.documentElement.classList.contains("light-mode");
+    ctx.lineWidth = 1;
+
+    for (let l = 0; l < nodes.length - 1; l++) {
+      for (let aIdx = 0; aIdx < nodes[l].length; aIdx++) {
+        for (let bIdx = 0; bIdx < nodes[l + 1].length; bIdx++) {
+          const a = nodes[l][aIdx];
+          const b = nodes[l + 1][bIdx];
+
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+
+          // check if this connection should pulse
+          const activeA = activeNodes[l].includes(aIdx);
+          const activeB = activeNodes[l + 1].includes(bIdx);
+
+          if (activeA && activeB) {
+            // find the smaller timer for blending
+            const timerA = activeTimers[l][activeNodes[l].indexOf(aIdx)];
+            const timerB = activeTimers[l + 1][activeNodes[l + 1].indexOf(bIdx)] || 0;
+            const alpha = 1.1 * Math.min(timerA, timerB); // increase alpha for visibility
+            // ctx.strokeStyle = "#6366f1"; 
+            ctx.strokeStyle = isLightMode
+              ? `rgba(55,48,163,1)`
+              : `rgba(255,255,255,${alpha})`;
+          } else {
+            ctx.strokeStyle = isLightMode
+              ? "rgba(0,0,0,0.25)"
+              : "rgba(206,224,86,0.2)";
+          }
+
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function drawNodes() {
+    const isLightMode = document.documentElement.classList.contains("light-mode");
+
+    for (let l = 0; l < nodes.length; l++) {
+      for (let n = 0; n < nodes[l].length; n++) {
+        const node = nodes[l][n];
+        node.pulse += 0.05;
+        node.y = node.baseY + Math.sin(node.pulse * 0.5) * node.moveOffset;
+
+        const isActiveNode = activeNodes[l].includes(n);
+        const timer = isActiveNode
+          ? activeTimers[l][activeNodes[l].indexOf(n)]
+          : 0;
+
+        const radius = 2 + Math.sin(node.pulse) * 1.5 + timer * 3;
+
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, radius, 0, Math.PI * 2);
+        ctx.fillStyle = isLightMode
+          ? isActiveNode ? `rgba(0,0,0,1)` : "rgba(0,0,0,0.5)"
+          : isActiveNode ? `rgba(255,255,255,${0.5 + timer * 0.5})` : "rgba(206,224,86,0.5)";
+        ctx.fill();
+      }
+    }
+  }
+
+  function animateCNN() {
+    requestAnimationFrame(animateCNN);
+    ctx.clearRect(0, 0, cnnCanvas.width, cnnCanvas.height);
+
+    // increment timers for active nodes
+    for (let l = 0; l < activeTimers.length; l++) {
+      for (let i = 0; i < activeTimers[l].length; i++) {
+        if (activeTimers[l][i] < 1) activeTimers[l][i] += 0.03;
+      }
+    }
+
+    drawConnections();
+    drawNodes();
+
+    // check if last layer all timers reached 1
+    if (activeTimers[activeTimers.length - 1][0] >= 1) {
+      selectActiveNodes();
+    }
+  }
+
+  function resizeCNN() {
+    cnnCanvas.width = window.innerWidth;
+    cnnCanvas.height = window.innerHeight;
+    setLayers();
+    initCNN();
+  }
+
+  // ================== Setup ================== //
+  resizeCNN();
+  animateCNN();
+  window.addEventListener("resize", resizeCNN);
+}
 // ==================== SCROLL TO TOP BUTTON ==================== //
 const scrollToTopBtn = document.createElement("button");
 scrollToTopBtn.classList.add("scroll-to-top");
