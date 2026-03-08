@@ -284,7 +284,7 @@ if (cnnCanvas) {
     if (window.innerWidth < 768) { // mobile/tablet
       layers = [8, 6, 2];
       paddingX = 10;
-      paddingY = 20;
+      paddingY = 0;
     } else { // desktop
       layers = [18, 16, 14, 12, 10, 8, 6, 4];
       paddingX = 20;
