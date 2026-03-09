@@ -855,7 +855,7 @@ h3 {
 /* ==================== SKILLS SECTION ==================== */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
@@ -1067,10 +1067,16 @@ h3 {
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .group-photo-image {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   border: 2px solid var(--border-main);
   border-radius: 8px;
