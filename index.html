@@ -1,198 +1,378 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>FAST ICD Batch 2025 | Tapeout Projects Showcase</title>
+    <meta
+      name="description"
+      content="Explore the innovative semiconductor tapeout projects developed by the FAST National University ICD Batch 2025. This showcase highlights cutting-edge digital design, VLSI architectures, AI accelerators, nano-processors, and hardware systems designed by the next generation of engineers."
+    />
+    <meta
+      name="keywords"
+      content="FAST University, ICD, Tapeout, VLSI, Semiconductor, Digital Design, Chip Design, FAST Batch 2025, Hardware Projects, Pakistan Semiconductor"
+    />
+    <meta name="author" content="FAST ICD Batch 2025" />
+    <meta
+      property="og:title"
+      content="FAST ICD Batch 2025 | Tapeout Projects"
+    />
+    <meta
+      property="og:description"
+      content="Discover the semiconductor and digital design tapeout projects created by FAST ICD Batch 2025 students. Featuring innovative architectures, AI accelerators, and modern VLSI designs."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fast-icd-b25.github.io/" />
+    <meta
+      property="og:image"
+      content="https://fast-icd-b25.github.io/assets/images/Website-Screenshot.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="FAST ICD Batch 2025 | Tapeout Projects"
+    />
+    <meta
+      name="twitter:description"
+      content="Showcasing innovative semiconductor tapeout projects by FAST ICD Batch 2025 — featuring AI hardware, nano-processors, and advanced digital design architectures."
+    />
+    <meta
+      name="twitter:image"
+      content="https://fast-icd-b25.github.io/assets/images/Website-Screenshot.png"
+    />
+    <link rel="canonical" href="https://fast-icd-b25.github.io/" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/Icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/Icon.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/Icon.png"
+    />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>FAST ICD Batch 2025 | Tapeout Projects Showcase</title>
-  <meta name="description" content="Explore the innovative semiconductor tapeout projects developed by the FAST National University ICD Batch 2025. This showcase highlights cutting-edge digital design, VLSI architectures, AI accelerators, nano-processors, and hardware systems designed by the next generation of engineers.">
-  <meta name="keywords" content="FAST University, ICD, Tapeout, VLSI, Semiconductor, Digital Design, Chip Design, FAST Batch 2025, Hardware Projects, Pakistan Semiconductor">
-  <meta name="author" content="FAST ICD Batch 2025">
-  <meta property="og:title" content="FAST ICD Batch 2025 | Tapeout Projects">
-  <meta property="og:description" content="Discover the semiconductor and digital design tapeout projects created by FAST ICD Batch 2025 students. Featuring innovative architectures, AI accelerators, and modern VLSI designs.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://fast-icd-b25.github.io/">
-  <meta property="og:image" content="https://fast-icd-b25.github.io/assets/images/Website-Screenshot.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="FAST ICD Batch 2025 | Tapeout Projects">
-  <meta name="twitter:description" content="Showcasing innovative semiconductor tapeout projects by FAST ICD Batch 2025 — featuring AI hardware, nano-processors, and advanced digital design architectures.">
-  <meta name="twitter:image" content="https://fast-icd-b25.github.io/assets/images/Website-Screenshot.png">
-  <link rel="canonical" href="https://fast-icd-b25.github.io/">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/Icon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/Icon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/Icon.png">
-  <meta name="theme-color" content="#0f172a">
-  <link rel="stylesheet" href="assets/css/styles.css">
-</head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container nav-container">
+        <div class="logo">
+          <a href="./index.html"></a>
+          <img
+            src="assets/images/footer-right.png"
+            alt="Summit Logo"
+            class="logo-2d"
+          />
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">Summit</a></li>
+          <li><a href="#projects" class="nav-link">Tapeout Projects</a></li>
+          <li><a href="#faculty" class="nav-link">Faculty</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="theme-toggle" id="themeToggle">
+          <!-- Sun -->
+          <svg
+            class="sun-icon"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="12" cy="12" r="5" fill="currentColor" />
+            <line
+              x1="12"
+              y1="1"
+              x2="12"
+              y2="3"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <line
+              x1="12"
+              y1="21"
+              x2="12"
+              y2="23"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <line
+              x1="4.22"
+              y1="4.22"
+              x2="5.64"
+              y2="5.64"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <line
+              x1="18.36"
+              y1="18.36"
+              x2="19.78"
+              y2="19.78"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <line
+              x1="1"
+              y1="12"
+              x2="3"
+              y2="12"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <line
+              x1="21"
+              y1="12"
+              x2="23"
+              y2="12"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <line
+              x1="4.22"
+              y1="19.78"
+              x2="5.64"
+              y2="18.36"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <line
+              x1="18.36"
+              y1="5.64"
+              x2="19.78"
+              y2="4.22"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
 
-
-<body>
-<!-- Navbar -->
-<nav class="navbar">
-  <div class="container nav-container">
-    <div class="logo">
-      <a href="./index.html"></a>
-      <img src="assets/images/Icon.png" alt="Summit Logo" class="logo-3d">
-    </div>
-    <ul class="nav-links">
-      <li><a href="#home" class="nav-link">Home</a></li>
-      <li><a href="#about" class="nav-link">Summit</a></li>
-      <li><a href="#projects" class="nav-link">Tapeout Projects</a></li>
-      <li><a href="#faculty" class="nav-link">Faculty</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
-    <div class="theme-toggle" id="themeToggle">
-      <!-- Sun -->
-      <svg class="sun-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="12" cy="12" r="5" fill="currentColor"/>
-        <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-
-      <!-- Moon -->
-      <svg class="moon-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
-              fill="currentColor" stroke="currentColor" stroke-width="1"/>
-      </svg>
-    </div>
-    <div class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-</nav>
-
-<!-- Hero Section -->
-<section id="home" class="hero">
-  <canvas id="hero-canvas"></canvas>
-  <div class="container hero-container">
-    <div class="hero-content">
-      <h1 class="hero-title">IC DESIGN LAB AT FAST-NU ISLAMABAD BATCH 2025 PRESENTS</h1>
-      <p class="hero-subtitle">Tapeout Projects – Spring 2026</p>
-      <p class="hero-description">
-        Showcasing graduate-level tapeout projects in digital, mixed-signal, and advanced semiconductor research on Pakistan Semiconductor Summit '26  
-      </p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary">Explore Projects</a>
-        <a href="#about" class="btn btn-secondary">About the Summit</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- About/Summit Section -->
-<section id="about" class="about">
-  <div class="container">
-    <h2 class="section-title">About the Projects</h2>
-    <div class="about-content">
-      <div class="about-text">
-        <p>
-          FAST ICD Batch 2025 presents tapeout-ready ASIC design projects, at the Pakistan Semiconductor Summit 2026, developed by students at the IC Design Lab.  
-          Projects span digital VLSI architectures, mixed-signal circuits, and cutting-edge semiconductor research targeting real silicon fabrication.
-        </p>
-        <p>
-          Each project is mentored by faculty experts, leveraging professional EDA tools such as Cadence Virtuoso, Innovus, and Synopsys for synthesis, verification, and physical design.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Projects Section -->
-<section id="projects" class="projects">
-  <div class="container">
-    <h2 class="section-title">Tapeout Projects – Spring 2026</h2>
-    <div class="projects-grid">
-
-      <div class="project-card interactive-card">
-        <h3>Efficient CNN Multiplier Architecture</h3>
-        <p>Bringing compute back home to edge devices which preserves data privacy, security and reduces the latency</p>
-        <a href="projects/cnn-multiplier.html" class="btn btn-secondary">View Project</a>
-      </div>
-
-      <div class="project-card interactive-card">
-        <h3>4-bit AC Nano Processor</h3>
-        <p>Ultra-low power nano-processor architecture designed for biomedical implants and smart dust systems.</p>
-        <a href="projects/nano-processor.html" class="btn btn-secondary">View Project</a>
-      </div>
-
-      <div class="project-card interactive-card">
-        <h3>Modulo Sampling ADC</h3>
-        <p>High dynamic range modulo ADC architecture for next-generation signal acquisition and processing.</p>
-        <a href="projects/modulo-adc.html" class="btn btn-secondary">View Project</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Faculty Section -->
-<section id="faculty" class="skills">
-  <div class="container">
-    <h2 class="section-title">Faculty Supervisors</h2>
-    <div class="skills-grid">
-
-      <div class="skill-category interactive-card">
-        <h3>Prof. Dr. Rashad Ramzan</h3>
-        <p>Supervising Nano Processor</p>
-      </div>
-
-      <div class="skill-category interactive-card">
-        <h3>Dr. Hassan Saif</h3>
-        <p>Supervising AI Accelerator</p>
-      </div>
-
-      <div class="skill-category interactive-card">
-        <h3>Dr. Khurram Javed</h3>
-        <p>Supervising Modulo ADC</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="contact">
-  <div class="container">
-    <h2 class="section-title">Contact</h2>
-    <div class="contact-content">
-      <p>For queries or collaboration opportunities, reach out to the IC Design Lab:</p>
-      <div class="contact-info">
-        <a href="mailto:iclab@fastnu.edu.pk" class="contact-item interactive-card">
-          <span class="icon">✉</span> iclab@fastnu.edu.pk
-        </a>
-        <div>
-          <a href="https://www.google.com/maps?q=FAST+NUCES+Islamabad"
-            target="_blank"
-            class="contact-item interactive-card map-card">
-            <img src="assets/images/fast-map.png" alt="FAST Islamabad Location" class="map-preview">
-          </a>
+          <!-- Moon -->
+          <svg
+            class="moon-icon"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="1"
+            />
+          </svg>
+        </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
-      <div class="social-links">
-        <a href="https://linkedin.com" class="btn btn-secondary" target="_blank">LinkedIn</a>
-        <a href="https://github.com/fast-icd-b25" class="btn btn-secondary" target="_blank">GitHub</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <canvas id="hero-canvas"></canvas>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            IC DESIGN LAB AT FAST-NU ISLAMABAD BATCH 2025 PRESENTS
+          </h1>
+          <p class="hero-subtitle">Tapeout Projects – Spring 2026</p>
+          <p class="hero-description">
+            Showcasing graduate-level tapeout projects in digital, mixed-signal,
+            and advanced semiconductor research on Pakistan Semiconductor Summit
+            '26
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">Explore Projects</a>
+            <a href="#about" class="btn btn-secondary">About the Project</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <p>&copy; 2026 Pakistan Semiconductor Summit. All Rights Reserved.</p>
-    <p>IC Design Lab, FAST-NU Islamabad</p>
-  </div>
-</footer>
+    <!-- About/Summit Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">About the Projects</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              FAST ICD Batch 2025 presents tapeout-ready ASIC design projects,
+              at the Pakistan Semiconductor Summit 2026, developed by students
+              at the IC Design Lab. Projects span digital VLSI architectures,
+              mixed-signal circuits, and cutting-edge semiconductor research
+              targeting real silicon fabrication.
+            </p>
+            <p>
+              Each project is mentored by faculty experts, leveraging
+              professional EDA tools such as Cadence Virtuoso, Innovus, and
+              Synopsys for synthesis, verification, and physical design.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script src="assets/js/script.js"></script>
-</body>
+    <!-- Faculty Section -->
+    <section id="faculty" class="skills">
+      <div class="container">
+        <h2 class="section-title">Faculty Supervisors</h2>
+        <div class="skills-grid">
+          <div class="skill-category interactive-card">
+            <h3>Prof. Dr. Rashad Ramzan</h3>
+            <p>Supervising Nano Processor</p>
+          </div>
+
+          <div class="skill-category interactive-card">
+            <h3>Dr. Hassan Saif</h3>
+            <p>Supervising AI Accelerator</p>
+          </div>
+
+          <div class="skill-category interactive-card">
+            <h3>Dr. Khurram Javed</h3>
+            <p>Supervising Modulo ADC</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="section-title">Tapeout Projects – Spring 2026</h2>
+        <div class="projects-grid">
+          <div class="project-card interactive-card">
+            <h3>Efficient CNN Multiplier Architecture</h3>
+            <p>
+              Bringing compute back home to edge devices which preserves data
+              privacy, security and reduces the latency
+            </p>
+            <a href="projects/cnn-multiplier.html" class="btn btn-secondary"
+              >View Project</a
+            >
+          </div>
+
+          <div class="project-card interactive-card">
+            <h3>4-bit AC Nano Processor</h3>
+            <p>
+              Ultra-low power nano-processor architecture designed for
+              biomedical implants and smart dust systems.
+            </p>
+            <a href="projects/nano-processor.html" class="btn btn-secondary"
+              >View Project</a
+            >
+          </div>
+
+          <div class="project-card interactive-card">
+            <h3>Modulo Sampling ADC</h3>
+            <p>
+              High dynamic range modulo ADC architecture for next-generation
+              signal acquisition and processing.
+            </p>
+            <a href="projects/modulo-adc.html" class="btn btn-secondary"
+              >View Project</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Batch 2025 Section -->
+    <section id="batch" class="batch">
+      <div class="container">
+        <h2 class="section-title">Batch 2025 Members</h2>
+        <div class="batch-grid" id="batchGrid"></div>
+      </div>
+    </section>
+
+    <!-- Group Photo Section -->
+    <section id="group-photo" class="group-photo">
+      <div class="container">
+        <h2 class="section-title">Batch 2025 Group Photo</h2>
+        <div class="group-photo-container">
+          <img
+            src="assets/images/batch-group-photo.jpeg"
+            alt="FAST ICD Batch 2025 Group Photo"
+            class="group-photo-image"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-content">
+          <p>
+            For queries or collaboration opportunities, reach out to the IC
+            Design Lab:
+          </p>
+          <div class="contact-info">
+            <a
+              href="mailto:iclab@fastnu.edu.pk"
+              class="contact-item interactive-card"
+            >
+              <span class="icon">✉</span> iclab@fastnu.edu.pk
+            </a>
+            <div>
+              <a
+                href="https://www.google.com/maps?q=FAST+NUCES+Islamabad"
+                target="_blank"
+                class="contact-item interactive-card map-card"
+              >
+                <img
+                  src="assets/images/fast-map.png"
+                  alt="FAST Islamabad Location"
+                  class="map-preview"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="social-links">
+            <a
+              href="https://linkedin.com"
+              class="btn btn-secondary"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a
+              href="https://github.com/fast-icd-b25"
+              class="btn btn-secondary"
+              target="_blank"
+              >GitHub</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2026 Pakistan Semiconductor Summit. All Rights Reserved.</p>
+        <p>IC Design Lab, FAST-NU Islamabad</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>

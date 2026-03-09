@@ -14,8 +14,7 @@ navLink.forEach((link) =>
 /* ==================== THEME TOGGLE ==================== */
 const initializeTheme = () => {
   const savedTheme = localStorage.getItem("theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const isDarkMode = savedTheme ? savedTheme === "dark" : prefersDark;
+  const isDarkMode = savedTheme ? savedTheme === "dark" : false; // Default to light mode
 
   if (!isDarkMode) {
     document.documentElement.classList.add("light-mode");
@@ -453,6 +452,24 @@ window.addEventListener("scroll", () => {
 scrollToTopBtn.addEventListener("click", () =>
   window.scrollTo({ top: 0, behavior: "smooth" }),
 );
+
+// ==================== BATCH 2025 MEMBERS GENERATION ==================== //
+const batchGrid = document.getElementById("batchGrid");
+if (batchGrid) {
+  for (let i = 1; i <= 32; i++) {
+    const memberCard = document.createElement("div");
+    memberCard.className = "batch-member interactive-card";
+    memberCard.innerHTML = `
+      <img
+        src="assets/images/members/member-${String(i).padStart(2, "0")}.jpg"
+        alt="Member ${i}"
+        class="member-photo"
+      />
+      <h4>Member Name</h4>
+    `;
+    batchGrid.appendChild(memberCard);
+  }
+}
 
 // Initial Fade In
 window.addEventListener("load", () => {
