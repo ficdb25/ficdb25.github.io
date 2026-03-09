@@ -217,7 +217,8 @@ if (canvas) {
 
   function connect() {
     // Check current theme
-    const isLightMode = document.documentElement.classList.contains("light-mode");
+    const isLightMode =
+      document.documentElement.classList.contains("light-mode");
 
     for (let a = 0; a < particlesArray.length; a++) {
       for (let b = a; b < particlesArray.length; b++) {
@@ -264,8 +265,6 @@ if (canvas) {
   animate();
 }
 
-
-
 // ==================== CNN HERO BACKGROUND ==================== //
 const cnnCanvas = document.getElementById("cnn-hero-canvas");
 
@@ -280,11 +279,18 @@ if (cnnCanvas) {
   let activeTimers = []; // timers per active node
 
   function setLayers() {
-    if (window.innerWidth < 768) { // mobile/tablet
+    if (window.innerWidth < 768) {
+      // mobile/tablet
       layers = [8, 6, 2];
       paddingX = 10;
+<<<<<<< Updated upstream
       paddingY = 20;
     } else { // desktop
+=======
+      paddingY = 0;
+    } else {
+      // desktop
+>>>>>>> Stashed changes
       layers = [18, 16, 14, 12, 10, 8, 6, 4];
       paddingX = 20;
       paddingY = 0;
@@ -328,7 +334,10 @@ if (cnnCanvas) {
         count = 1;
       } else {
         // random number of active nodes per layer (1 to ~30% of layer)
-        count = Math.max(1, Math.floor(Math.random() * (nodes[l].length * 0.3) + 1));
+        count = Math.max(
+          1,
+          Math.floor(Math.random() * (nodes[l].length * 0.3) + 1),
+        );
       }
 
       // pick unique random indices for this layer
@@ -343,7 +352,8 @@ if (cnnCanvas) {
   }
 
   function drawConnections() {
-    const isLightMode = document.documentElement.classList.contains("light-mode");
+    const isLightMode =
+      document.documentElement.classList.contains("light-mode");
     ctx.lineWidth = 1;
 
     for (let l = 0; l < nodes.length - 1; l++) {
@@ -363,9 +373,10 @@ if (cnnCanvas) {
           if (activeA && activeB) {
             // find the smaller timer for blending
             const timerA = activeTimers[l][activeNodes[l].indexOf(aIdx)];
-            const timerB = activeTimers[l + 1][activeNodes[l + 1].indexOf(bIdx)] || 0;
+            const timerB =
+              activeTimers[l + 1][activeNodes[l + 1].indexOf(bIdx)] || 0;
             const alpha = 1.1 * Math.min(timerA, timerB); // increase alpha for visibility
-            // ctx.strokeStyle = "#6366f1"; 
+            // ctx.strokeStyle = "#6366f1";
             ctx.strokeStyle = isLightMode
               ? `rgba(55,48,163,1)`
               : `rgba(255,255,255,${alpha})`;
@@ -382,7 +393,8 @@ if (cnnCanvas) {
   }
 
   function drawNodes() {
-    const isLightMode = document.documentElement.classList.contains("light-mode");
+    const isLightMode =
+      document.documentElement.classList.contains("light-mode");
 
     for (let l = 0; l < nodes.length; l++) {
       for (let n = 0; n < nodes[l].length; n++) {
@@ -400,8 +412,12 @@ if (cnnCanvas) {
         ctx.beginPath();
         ctx.arc(node.x, node.y, radius, 0, Math.PI * 2);
         ctx.fillStyle = isLightMode
-          ? isActiveNode ? `rgba(0,0,0,1)` : "rgba(0,0,0,0.5)"
-          : isActiveNode ? `rgba(255,255,255,${0.5 + timer * 0.5})` : "rgba(206,224,86,0.5)";
+          ? isActiveNode
+            ? `rgba(0,0,0,1)`
+            : "rgba(0,0,0,0.5)"
+          : isActiveNode
+            ? `rgba(255,255,255,${0.5 + timer * 0.5})`
+            : "rgba(206,224,86,0.5)";
         ctx.fill();
       }
     }
@@ -454,6 +470,38 @@ scrollToTopBtn.addEventListener("click", () =>
 );
 
 // ==================== BATCH 2025 MEMBERS GENERATION ==================== //
+const batchMembers = [
+  "Babar_Bhutta",
+  "Humbal_Hammad",
+  "Muhammad_Uzair",
+  "Osama_Anees_Mirza",
+  "Ejaz_Ahmad_Khan",
+  "Ajmal_Khan",
+  "Salman_Qazi",
+  "Kousar_Gul",
+  "Member_Name",
+  "Member_Name",
+  "Member_Name",
+  "Member_Name",
+  "Member_Name",
+  "Member_Name",
+  "Member_Name",
+  "Member_Name",
+  "Member_Name",
+  "Member_Name",
+  "Member_Name",
+  "Member_Name",
+  "Member_Name",
+  "Member_Name",
+  "Member_Name",
+  "Member_Name",
+  "Member_Name",
+  "Member_Name",
+  "Member_Name",
+  "Member_Name",
+  "Member_Name",
+];
+
 const batchGrid = document.getElementById("batchGrid");
 if (batchGrid) {
   for (let i = 1; i <= 32; i++) {
@@ -461,11 +509,11 @@ if (batchGrid) {
     memberCard.className = "batch-member interactive-card";
     memberCard.innerHTML = `
       <img
-        src="assets/images/members/member-${String(i).padStart(2, "0")}.jpg"
-        alt="Member ${i}"
+        src="assets/images/batch25/${batchMembers[i - 1]}.png"
+        alt="${batchMembers[i - 1]}"
         class="member-photo"
       />
-      <h4>Member Name</h4>
+      <h4>${batchMembers[i - 1]}</h4>
     `;
     batchGrid.appendChild(memberCard);
   }
