@@ -283,6 +283,7 @@ if (cnnCanvas) {
       // mobile/tablet
       layers = [8, 6, 2];
       paddingX = 10;
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       paddingY = 20;
     } else { // desktop
@@ -291,6 +292,11 @@ if (cnnCanvas) {
     } else {
       // desktop
 >>>>>>> Stashed changes
+=======
+      paddingY = 0;
+    } else {
+      // desktop
+>>>>>>> temp-changes
       layers = [18, 16, 14, 12, 10, 8, 6, 4];
       paddingX = 20;
       paddingY = 0;
