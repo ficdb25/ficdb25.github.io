@@ -13,10 +13,12 @@
   <meta property="og:description" content="Discover the 4-Bit AC Nano-Processor project created by FAST ICD Batch 2025 students." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ficdb25.github.io/" />
+  <meta property="og:image" content="https://ficdb25.github.io/assets/images/Link-Previews/Nano-Light-Screenshot.png" />
   
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="FAST ICD Batch 2025 | Tapeout Projects" />
   <meta name="twitter:description" content="Design of a 4-Bit AC Nano-Processor for Self-Powered Biomedical and Smart Dust Applications." />
+  <meta name="twitter:image" content="https://ficdb25.github.io/assets/images/Link-Previews/Nano-Light-Screenshot.png" />
 
   <link rel="canonical" href="https://ficdb25.github.io/src/pages/projects/nano-processor.html" />
   <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/images/icons/Icon.png" />
@@ -27,10 +29,12 @@
   <link rel="icon" type="image/png" href="../../../assets/images/icons/Icon.png">
   
   <link rel="stylesheet" href="../../css/styles.css">
-  <script src="../../js/script.js" defer></script>
-
+  <link rel="stylesheet" href="../../css/projects.css">
   <link rel="stylesheet" href="../../css/nano_styles.css">
+  
+  <script src="../../js/script.js" defer></script>
   <script src="../../js/nano_script.js" defer></script>
+
 </head>
 <body>
 
@@ -58,249 +62,284 @@
   </div>
 </nav>
 
-<section class="hero" id="overview">
-  <div class="container hero-container">
-    <div class="hero-content">
-      <h1 class="hero-title">4-Bit AC Nano-Processor</h1>
-      <p class="hero-subtitle">Design for Self-Powered Biomedical and Smart Dust Applications</p>
-      <p class="hero-description">
-        A revolutionary adiabatic processor eliminating RF-to-DC rectifiers and large storage capacitors, enabling self-powered IoT nodes and smart dust.
+
+<main>
+  <section class="hero" id="overview">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">4-Bit AC Nano-Processor</h1>
+        <p class="hero-subtitle">Design for Self-Powered Biomedical and Smart Dust Applications</p>
+        <p class="hero-description">
+          A revolutionary adiabatic processor eliminating RF-to-DC rectifiers and large storage capacitors, enabling self-powered IoT nodes and smart dust.
+        </p>
+        <div class="hero-buttons" style="display: flex; gap: 1rem; align-items: center; justify-content: center;">
+          <a href="../../../index.html#projects" class="btn btn-secondary">Back to Projects</a>         
+          <a href="../../../assets/documents/nano/Poster_nProcessor_Final.pdf" target="_blank" class="btn btn-primary" title="View Project Poster" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            View Poster
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="challenge">
+    <div class="container">
+      <h2 class="section-title">Project Description</h2>
+      <p>
+        The development of a 4-bit AC nano-processor represents a significant shift in the design of self-powered 
+        IoT nodes and "smart dust." Traditional wireless power transfer (WPT) systems are hindered by the 
+        inefficiency of RF-to-DC rectifiers and the substantial area required for storage capacitors. The AC-logic 
+        family utilizes the phase of the signal to represent logic states 0∘ for High and 180∘ for Low while the QRF
+        only logic utilizes quadrature (I and Q) signals to manage timing phases such as pre-charge, hold, and 
+        evaluate. This "rectifier-less" architecture eliminates the most power-hungry components of conventional 
+        designs.
       </p>
-      <div class="hero-buttons" style="display: flex; gap: 1rem; align-items: center; justify-content: center;">
-        <a href="../../../index.html#projects" class="btn btn-secondary">Back to Projects</a>
-        
-        <a href="../../../assets/images/nano/Poster_nProcessor_Final.pdf" target="_blank" class="btn btn-primary" title="View Project Poster" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-            <line x1="16" y1="13" x2="8" y2="13"></line>
-            <line x1="16" y1="17" x2="8" y2="17"></line>
-            <polyline points="10 9 9 9 8 9"></polyline>
-          </svg>
-          View Poster
-        </a>
-      </div>
+      <p>
+        Experimental validation of these logic families across different CMOS nodes demonstrates their suitability 
+        for complex processing tasks. In 65 nm CMOS, the fundamental AC gates (NOT, NAND, and NOR) 
+        consume as little as 8.2 nW to 20.8 nW.
+      </p>
+      <p>
+        The integration of these AC and QRF components into a 4-bit nano-processor provides a robust framework 
+        for next-generation implantable bio-medical devices and autonomous sensors. By leveraging the inherent 
+        adiabatic nature of the proposed logic cells, the processor can derive both its power and data 
+        synchronization directly from transmitted RF field. This design not only simplifies the complexity of single
+        chip wirelessly powered applications but also ensures long-term operation in environments where battery 
+        replacement is impossible. The successful measurement of these fabricated single cell design confirms that 
+        logic information can be reliably processed in the phase domain, paving the way for fully functional, 
+        battery-free nano-computing.
+      </p>
+      <p>
+        Here in this project we aim to make the 4-bit ultra-low power nano-prcessor based on these AC-Cells. The 
+        schematic work has been done for one version, and US patent filed. The next step is the refinement of the 
+        schematic of the layout and tapeout.
+      </p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="about" id="challenge">
-  <div class="container">
-    <h2 class="section-title">Project Description</h2>
-    <p>
-      The development of a 4-bit AC nano-processor represents a significant shift in the design of self-powered 
-      IoT nodes and "smart dust." Traditional wireless power transfer (WPT) systems are hindered by the 
-      inefficiency of RF-to-DC rectifiers and the substantial area required for storage capacitors. The AC-logic 
-      family utilizes the phase of the signal to represent logic states 0∘ for High and 180∘ for Low while the QRF
-      only logic utilizes quadrature (I and Q) signals to manage timing phases such as pre-charge, hold, and 
-      evaluate. This "rectifier-less" architecture eliminates the most power-hungry components of conventional 
-      designs.
-    </p>
-    <p>
-      Experimental validation of these logic families across different CMOS nodes demonstrates their suitability 
-      for complex processing tasks. In 65 nm CMOS, the fundamental AC gates (NOT, NAND, and NOR) 
-      consume as little as 8.2 nW to 20.8 nW.
-    </p>
-    <p>
-      The integration of these AC and QRF components into a 4-bit nano-processor provides a robust framework 
-      for next-generation implantable bio-medical devices and autonomous sensors. By leveraging the inherent 
-      adiabatic nature of the proposed logic cells, the processor can derive both its power and data 
-      synchronization directly from transmitted RF field. This design not only simplifies the complexity of single
-      chip wirelessly powered applications but also ensures long-term operation in environments where battery 
-      replacement is impossible. The successful measurement of these fabricated single cell design confirms that 
-      logic information can be reliably processed in the phase domain, paving the way for fully functional, 
-      battery-free nano-computing.
-    </p>
-    <p>
-      Here in this project we aim to make the 4-bit ultra-low power nano-prcessor based on these AC-Cells. The 
-      schematic work has been done for one version, and US patent filed. The next step is the refinement of the 
-      schematic of the layout and tapeout.
-    </p>
-  </div>
-</section>
+  <section class="projects" id="technology">
+    <div class="container">
+      <h2 class="section-title">AC-Logic & QRF Families</h2>
+      <p>
+        The methodology applies adiabatic CMOS logic to process sinusoidal signals with minimal power dissipation. We exploit phase differences using two distinct approaches:
+      </p>
+      
+      <div class="animation-container">
+        <div class="diagram-card interactive-card">
+          <h3>AC Logic (180&deg;)</h3>
+          <p class="diagram-desc">Uses 180&deg; out-of-phase differential sinusoids. The instantaneous voltage difference defines a valid logic evaluation region.</p>
+          <div class="svg-wrapper">
+            <svg class="wave-svg ac-svg" viewBox="0 0 200 100">
+              <path class="path-wave1" d="M 0 50 Q 25 0, 50 50 T 100 50 T 150 50 T 200 50" />
+              <path class="path-wave2" d="M 0 50 Q 25 100, 50 50 T 100 50 T 150 50 T 200 50" />
+            </svg>
+          </div>
+        </div>
 
-<section class="projects" id="technology">
-  <div class="container">
-    <h2 class="section-title">AC-Logic & QRF Families</h2>
-    <p>
-      The methodology applies adiabatic CMOS logic to process sinusoidal signals with minimal power dissipation. We exploit phase differences using two distinct approaches:
-    </p>
-    
-    <div class="animation-container">
-      <div class="diagram-card interactive-card">
-        <h3>AC Logic (180&deg;)</h3>
-        <p class="diagram-desc">Uses 180&deg; out-of-phase differential sinusoids. The instantaneous voltage difference defines a valid logic evaluation region.</p>
-        <div class="svg-wrapper">
-          <svg class="wave-svg ac-svg" viewBox="0 0 200 100">
-            <path class="path-wave1" d="M 0 50 Q 25 0, 50 50 T 100 50 T 150 50 T 200 50" />
-            <path class="path-wave2" d="M 0 50 Q 25 100, 50 50 T 100 50 T 150 50 T 200 50" />
-          </svg>
+        <div class="diagram-card interactive-card">
+          <h3>Quadrature RF (90&deg;)</h3>
+          <p class="diagram-desc">Employs 90&deg; QRF signals to create distinct precharge, hold, and evaluation phases, avoiding standard DC generation.</p>
+          <div class="svg-wrapper">
+            <svg class="wave-svg quadrature-svg" viewBox="0 0 200 100">
+              <path class="path-wave1" d="M 0 50 Q 25 70 50 70 Q 75 30 100 50 Q 125 30 150 30 Q 175 70 200 50" />
+              <path class="path-wave2" d="M 0 70 Q 25 30 50 50 Q 75 30 100 30 Q 125 70 150 50 Q 175 70 200 70" />
+            </svg>
+          </div>
         </div>
       </div>
 
-      <div class="diagram-card interactive-card">
-        <h3>Quadrature RF (90&deg;)</h3>
-        <p class="diagram-desc">Employs 90&deg; QRF signals to create distinct precharge, hold, and evaluation phases, avoiding standard DC generation.</p>
-        <div class="svg-wrapper">
-          <svg class="wave-svg quadrature-svg" viewBox="0 0 200 100">
-            <path class="path-wave1" d="M 0 50 Q 25 70 50 70 Q 75 30 100 50 Q 125 30 150 30 Q 175 70 200 50" />
-            <path class="path-wave2" d="M 0 70 Q 25 30 50 50 Q 75 30 100 30 Q 125 70 150 50 Q 175 70 200 70" />
-          </svg>
+      <div class="table-container">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Aspect</th>
+              <th>AC Logic</th>
+              <th>Quadrature RF</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Type</strong></td>
+              <td>Two Sinusoids Signal 180&deg; out of phase</td>
+              <td>Quadrature RF signals (I & Q) 90&deg; apart</td>
+            </tr>
+            <tr>
+              <td><strong>Topology</strong></td>
+              <td>Static CMOS Structure (PUN + PDN)</td>
+              <td>Dynamic Logic Architecture</td>
+            </tr>
+            <tr>
+              <td><strong>Regions</strong></td>
+              <td>Valid, Invalid</td>
+              <td>Precharge, Hold, Evaluate</td>
+            </tr>
+            <tr>
+              <td><strong>Isolation</strong></td>
+              <td>Series PMOS with body-biasing technique</td>
+              <td>Double Isolation Transistor</td>
+            </tr>
+            <tr>
+              <td><strong>Efficiency</strong></td>
+              <td>53.9% Energy Saved at System Level</td>
+              <td>60% Less Power Consumption</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills" id="architecture">
+    <div class="container">
+      <h2 class="section-title">Results & Future Work</h2>
+      <ul class="project-highlights">
+        <li><strong>Verified Cells:</strong> Fundamental logic cells (inverters, NAND, NOR, XOR, DFF) for both approaches have been designed and verified in 65 nm CMOS.</li>
+        <li><strong>Architecture Basis:</strong> The design follows the 4-Bit Intel4004 Architecture, featuring memory, ALU, stack, and register multiplexers.</li>
+        <li><strong>Current Status:</strong> The schematic work has been done for one version, and US patent filed. The next step is the refinement of the schematic, layout, and tapeout.</li>
+        <li><strong>Fabrication:</strong> Physical fabrication and experimental validation of the rectifier-less architecture in 65 nm CMOS are planned.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="skills" id="supervisors">
+    <div class="container">
+      <h2 class="section-title">Project Supervisors</h2>
+      <div class="skills-grid">
+        <div class="skill-category interactive-card"><h3>Dr. Hassan Saif</h3></div>
+        <div class="skill-category interactive-card"><h3>Dr. Khurram Javed</h3></div>
+        <div class="skill-category interactive-card"><h3>Dr. Rashad Ramzan</h3></div>
+      </div>
+    </div>
+  </section>
+<section class="team-section" id="team">
+    <div class="container">
+      <h2 class="section-title">Engineering Team</h2>
+      <div class="team-grid">
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch25/Humbal_Hammad.png" alt="Humbal Hammad" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Humbal Hammad</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
         </div>
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch25/Sharukh_Hussain.png" alt="Shahrukh Hussain" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Shahrukh Hussain</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch25/Ejaz_Ahmad_Khan.png" alt="Ejaz Ahmed" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Ejaz Ahmed</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch25/Muhammad_Uzair.png" alt="Uzair Sharif" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Uzair Sharif</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch25/Ahsan_Zia.png" alt="Ahsan Zia" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Ahsan Zia</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch25/Junaid_Razaq.png" alt="Junaid Razzaq" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Junaid Razzaq</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch-placeholder.jpg" alt="Muazam Iftikhar" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Muazam Iftikhar</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch25/Muhammad_Arlasan.png" alt="Muhammad Arsalan" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Muhammad Arsalan</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch25/Ajmal_Khan.png" alt="Ajmal Khan" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Ajmal Khan</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch25/Hadeesa.png" alt="Hadeesa Mehboob" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Hadeesa Mehboob</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
       </div>
     </div>
+  </section>
 
-    <div class="table-container">
-      <table class="comparison-table">
-        <thead>
-          <tr>
-            <th>Aspect</th>
-            <th>AC Logic</th>
-            <th>Quadrature RF</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Type</strong></td>
-            <td>Two Sinusoids Signal 180&deg; out of phase</td>
-            <td>Quadrature RF signals (I & Q) 90&deg; apart</td>
-          </tr>
-          <tr>
-            <td><strong>Topology</strong></td>
-            <td>Static CMOS Structure (PUN + PDN)</td>
-            <td>Dynamic Logic Architecture</td>
-          </tr>
-          <tr>
-            <td><strong>Regions</strong></td>
-            <td>Valid, Invalid</td>
-            <td>Precharge, Hold, Evaluate</td>
-          </tr>
-          <tr>
-            <td><strong>Isolation</strong></td>
-            <td>Series PMOS with body-biasing technique</td>
-            <td>Double Isolation Transistor</td>
-          </tr>
-          <tr>
-            <td><strong>Efficiency</strong></td>
-            <td>53.9% Energy Saved at System Level</td>
-            <td>60% Less Power Consumption</td>
-          </tr>
-        </tbody>
-      </table>
+  <section class="skills" id="references">
+    <div class="container">
+      <h2 class="section-title">References</h2>
+      <ol class="project-highlights">
+        <li>R. Ramzan, A. Beg, S. A. Jawed, F. Khan, M. Aaquib, and M. Junaid, "Quadrature RF-Only Logic Family for Single-Chip Self-Powered Transceivers," National University of Computer and Emerging Sciences (FAST-NU), Islamabad, Pakistan.</li>
+        <li>"AC-Logic Family for Wireless Powered Smart Dust and IoT Applications," Proceedings of the 36th IEEE International System-on-Chip Conference (SOCC), 2023.</li>
+        <li>S. B. Baker, W. Xiang and L. Atkinson, "Internet of Things for Smart Healthcare: Technologies, Challenges, and Opportunities," IEEE Access, vol. 5, pp. 26521-26544, 2017.</li>
+        <li>W. Arshad, R. Ramzan, A. Beg and N. Bastaki, "Comparison and design of VCOs for ultra-low power CMOS temperature sensors," IEEE International Conference on Communications, Signal Processing, and their Applications (ICCSPA), 2015.</li>
+        <li>J. Wenck, R. Amirtharajah, J. Collier, and J. Siebert, "AC power supply circuits for energy harvesting," IEEE Symposium on VLSI Circuits, pp. 92-93, 2007.</li>
+      </ol>
     </div>
-  </div>
-</section>
-
-<section class="skills" id="architecture">
-  <div class="container">
-    <h2 class="section-title">Results & Future Work</h2>
-    <ul class="project-highlights">
-      <li><strong>Verified Cells:</strong> Fundamental logic cells (inverters, NAND, NOR, XOR, DFF) for both approaches have been designed and verified in 65 nm CMOS.</li>
-      <li><strong>Architecture Basis:</strong> The design follows the 4-Bit Intel4004 Architecture, featuring memory, ALU, stack, and register multiplexers.</li>
-      <li><strong>Current Status:</strong> The schematic work has been done for one version, and US patent filed. The next step is the refinement of the schematic, layout, and tapeout.</li>
-      <li><strong>Fabrication:</strong> Physical fabrication and experimental validation of the rectifier-less architecture in 65 nm CMOS are planned.</li>
-    </ul>
-  </div>
-</section>
-
-<section class="skills" id="supervisors">
-  <div class="container">
-    <h2 class="section-title">Project Supervisors</h2>
-    <div class="skills-grid">
-      <div class="skill-category interactive-card"><h3>Dr. Hassan Saif</h3></div>
-      <div class="skill-category interactive-card"><h3>Dr. Khurram Javed</h3></div>
-      <div class="skill-category interactive-card"><h3>Dr. Rashad Ramzan</h3></div>
-    </div>
-  </div>
-</section>
-
-<section class="skills" id="team">
-  <div class="container">
-    <h2 class="section-title">Engineering Team</h2>
-    <div class="skills-grid">
-      <div class="skill-category interactive-card">
-        <img src="../../../assets/images/batch25/Humbal_Hammad.png" alt="Humbal Hammad" class="team-photo">
-        <h3>Humbal Hammad</h3>
-      </div>
-      <div class="skill-category interactive-card">
-        <img src="../../../assets/images/batch25/Sharukh_Hussain.png" alt="Shahrukh Hussain" class="team-photo">
-        <h3>Shahrukh Hussain</h3>
-      </div>
-      <div class="skill-category interactive-card">
-        <img src="../../../assets/images/batch25/Ejaz_Ahmad_Khan.png" alt="Ejaz Ahmed" class="team-photo">
-        <h3>Ejaz Ahmed</h3>
-      </div>
-      <div class="skill-category interactive-card">
-        <img src="../../../assets/images/batch25/Muhammad_Uzair.png" alt="Uzair Sharif" class="team-photo">
-        <h3>Uzair Sharif</h3>
-      </div>
-      <div class="skill-category interactive-card">
-        <img src="../../../assets/images/batch25/Ahsan_Zia.png" alt="Ahsan Zia" class="team-photo">
-        <h3>Ahsan Zia</h3>
-      </div>
-      <div class="skill-category interactive-card">
-        <img src="../../../assets/images/batch25/Junaid_Razaq.png" alt="Junaid Razzaq" class="team-photo">
-        <h3>Junaid Razzaq</h3>
-      </div>
-      <div class="skill-category interactive-card">
-        <h3>Muazam Iftikhar</h3>
-      </div>
-      <div class="skill-category interactive-card">
-        <img src="../../../assets/images/batch25/Muhammad_Arlasan.png" alt="Muhammad Arsalan" class="team-photo">
-        <h3>Muhammad Arsalan</h3>
-      </div>
-      <div class="skill-category interactive-card">
-        <img src="../../../assets/images/batch25/Ajmal_Khan.png" alt="Ajmal Khan" class="team-photo">
-        <h3>Ajmal Khan</h3>
-      </div>
-      <div class="skill-category interactive-card">
-        <img src="../../../assets/images/batch25/Hadeesa.png" alt="Hadeesa Mehboob" class="team-photo">
-        <h3>Hadeesa Mehboob</h3>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="skills" id="references">
-  <div class="container">
-    <h2 class="section-title">References</h2>
-    <ol class="project-highlights">
-      <li>R. Ramzan, A. Beg, S. A. Jawed, F. Khan, M. Aaquib, and M. Junaid, "Quadrature RF-Only Logic Family for Single-Chip Self-Powered Transceivers," National University of Computer and Emerging Sciences (FAST-NU), Islamabad, Pakistan.</li>
-      <li>"AC-Logic Family for Wireless Powered Smart Dust and IoT Applications," Proceedings of the 36th IEEE International System-on-Chip Conference (SOCC), 2023.</li>
-      <li>S. B. Baker, W. Xiang and L. Atkinson, "Internet of Things for Smart Healthcare: Technologies, Challenges, and Opportunities," IEEE Access, vol. 5, pp. 26521-26544, 2017.</li>
-      <li>W. Arshad, R. Ramzan, A. Beg and N. Bastaki, "Comparison and design of VCOs for ultra-low power CMOS temperature sensors," IEEE International Conference on Communications, Signal Processing, and their Applications (ICCSPA), 2015.</li>
-      <li>J. Wenck, R. Amirtharajah, J. Collier, and J. Siebert, "AC power supply circuits for energy harvesting," IEEE Symposium on VLSI Circuits, pp. 92-93, 2007.</li>
-    </ol>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="container">
-    <h2 class="section-title">Contact Us</h2>
-    <div class="contact-card">
-      <div class="contact-links">
-        <a href="mailto:contact@ficdb25.github.io" class="contact-link">
-          <svg width="24" height="24" viewBox="0 0 24 24" class="contact-icon">
-            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-          </svg>
-          contact@ficdb25.github.io
-        </a>
-        <a href="https://linkedin.com/company/fast-icd-batch-2025" class="contact-link">
-          <svg width="24" height="24" viewBox="0 0 24 24" class="contact-icon">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
-          LinkedIn
-        </a>
-        <a href="https://github.com/ficdb25" class="contact-link">
-          <svg width="24" height="24" viewBox="0 0 24 24" class="contact-icon">
-            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-          </svg>
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
+</main>
 
 <footer class="footer">
   <div class="container">

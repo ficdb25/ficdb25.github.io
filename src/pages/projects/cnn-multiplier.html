@@ -29,6 +29,7 @@
   <link rel="icon" type="image/png" href="../../../assets/images/icons/Icon.png">
   <link rel="stylesheet" href="../../css/styles.css">
   <link rel="stylesheet" href="../../css/cnn_styles.css">
+  <link rel="stylesheet" href="../../css/projects.css">
   <script src="../../js/script.js" defer></script>
 </head>
 <body>
@@ -48,6 +49,7 @@
       <li><a href="#pipeline" class="nav-link">Pipeline</a></li>
       <li><a href="#benefits" class="nav-link">Benefits</a></li>
       <li><a href="#team" class="nav-link">Team</a></li>
+      <li><a href="#references" class="nav-link">References</a></li>
     </ul>
     <div class="theme-toggle" id="themeToggle">
       <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -57,106 +59,234 @@
   </div>
 </nav>
 
-<!-- Project Hero -->
-<section class="hero" id="overview">
-  <canvas id="cnn-hero-canvas"></canvas>
-  <div class="container hero-container">
-    <div class="hero-content">
-      <h1 class="hero-title">Efficient CNN Multiplier Architecture</h1>
-      <p class="hero-subtitle">High-Performance & Energy-Efficient AI Accelerator</p>
-      <p class="hero-description">
-        An AI Accelerator that helps edge devices compute what it offloaded to different servers.
-      </p>
-      <div class="hero-buttons">
-        <a href="../../../index.html#projects" class="btn btn-secondary">Back to Projects</a>
+<main>
+  <!-- Project Hero -->
+  <section class="hero" id="overview">
+    <canvas id="cnn-hero-canvas"></canvas>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">Efficient CNN Multiplier Architecture</h1>
+        <p class="hero-subtitle">High-Performance & Energy-Efficient AI Accelerator</p>
+        <p class="hero-description">
+          An AI Accelerator that helps edge devices compute what it offloaded to different servers.
+        </p>
+        <div class="hero-buttons">
+          <a href="../../../index.html#projects" class="btn btn-secondary">Back to Projects</a>
+          <a href="../../../assets/documents/cnn/Poster.pdf" target="_blank" class="btn btn-primary" title="View Project Poster" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              View Poster
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Problem Statement -->
-<section class="about" id="problem">
-  <div class="container">
-    <h2 class="section-title">Problem Statement</h2>
-    <p>
-      Convolutional Neural Networks (CNNs) excel in image processing but are computationally expensive. Over 90% of computation comes from Multiply-Accumulate (MAC) operations. Conventional multipliers consume excessive power, occupy large silicon area, and suffer from high critical path delays. <br>
-      Edge devices typically offload this compute to a server and wait for the output. This not only increased the latency, but also damages the privacy of the individial. Why not keep everything in house and respect people's time, energy and privacy?
-    </p>
-  </div>
-</section>
-
-<!-- Solution -->
-<section class="projects" id="solution">
-  <div class="container">
-    <h2 class="section-title">Our Solution</h2>
-    <p>
-      We designed an efficient hardware multiplier architecture for CNN-based image processors using:
-    </p>
-    <ul class="project-highlights">
-      <li>Radix-4 Booth Encoding to reduce partial products by 50%</li>
-      <li>High-speed 4:2 Compressor Trees to shorten critical path delay</li>
-      <li>SRAM Memory Tiling for reduced memory bandwidth and faster computation</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Hardware Pipeline -->
-<section class="skills" id="pipeline">
-  <div class="container">
-    <h2 class="section-title">Hardware Processing Pipeline</h2>
-    <ol class="skill-items">
-      <li>Input Image → Preprocessing (224x224 RGB, Int8)</li>
-      <li>SRAM Tiling → Fetch initial 3x3 block and reuse cached data</li>
-      <li>Convolution → Booth Encoding → 4:2 Compressor → Final CPA Sum</li>
-      <li>Pooling → Downsampling → Dense Matrix Multiplication → Softmax Probabilities</li>
-      <li>Output → Real-time classification (e.g., Zebra: 98%)</li>
-    </ol>
-  </div>
-</section>
-
-<!-- Benefits -->
-<section class="about" id="benefits">
-  <div class="container">
-    <h2 class="section-title">Architecture Benefits</h2>
-    <ul class="project-highlights">
-      <li><strong>Memory Tiling:</strong> Reuses local pixel blocks in SRAM to reduce DRAM fetches.</li>
-      <li><strong>Radix-4 Booth Encoding:</strong> Cuts partial products by half compared to standard multipliers.</li>
-      <li><strong>4:2 Compressor Trees:</strong> Condenses four inputs into two outputs, shortening critical path.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Supervisors -->
-<section class="skills" id="supervisors">
-  <div class="container">
-    <h2 class="section-title">Project Supervisors</h2>
-    <div class="skills-grid">
-      <div class="skill-category interactive-card"><h3>Dr. Khurram Javed</h3></div>
-      <div class="skill-category interactive-card"><h3>Dr. Hassan Saif</h3></div>
-      <div class="skill-category interactive-card"><h3>Dr. Rashid Ramzan</h3></div>
+  <!-- Problem Statement -->
+  <section class="about" id="problem">
+    <div class="container">
+      <h2 class="section-title">Problem Statement</h2>
+      <p>
+        Convolutional Neural Networks (CNNs) excel in image processing but are computationally expensive. Over 90% of computation comes from Multiply-Accumulate (MAC) operations. Conventional multipliers consume excessive power, occupy large silicon area, and suffer from high critical path delays. <br>
+        Edge devices typically offload this compute to a server and wait for the output. This not only increased the latency, but also damages the privacy of the individial. Why not keep everything in house and respect people's time, energy and privacy?
+      </p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Engineering Team -->
-<section class="skills" id="team">
-  <div class="container">
-    <h2 class="section-title">Engineering Team</h2>
-    <div class="skills-grid">
-      <div class="skill-category interactive-card"><h3>Ahmad Shaban</h3></div>
-      <div class="skill-category interactive-card"><h3>Awab Younas</h3></div>
-      <div class="skill-category interactive-card"><h3>Eeman</h3></div>
-      <div class="skill-category interactive-card"><h3>Fajar Waseem</h3></div>
-      <div class="skill-category interactive-card"><h3>Humail Nawaz</h3></div>
-      <div class="skill-category interactive-card"><h3>Kausar Gul</h3></div>
-      <div class="skill-category interactive-card"><h3>Muhammad Mirza</h3></div>
-      <div class="skill-category interactive-card"><h3>Osama Mirza</h3></div>
-      <div class="skill-category interactive-card"><h3>Salman Qazi</h3></div>
-      <div class="skill-category interactive-card"><h3>Sana Nazir</h3></div>
-      <div class="skill-category interactive-card"><h3>Ume Kalsoom</h3></div>
+  <!-- Solution -->
+  <section class="projects" id="solution">
+    <div class="container">
+      <h2 class="section-title">Our Solution</h2>
+      <p>
+        We designed an efficient hardware multiplier architecture for CNN-based image processors using:
+      </p>
+      <ul class="project-highlights">
+        <li>Radix-4 Booth Encoding to reduce partial products by 50%</li>
+        <li>High-speed 4:2 Compressor Trees to shorten critical path delay</li>
+        <li>SRAM Memory Tiling for reduced memory bandwidth and faster computation</li>
+      </ul>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Hardware Pipeline -->
+  <section class="skills" id="pipeline">
+    <div class="container">
+      <h2 class="section-title">Hardware Processing Pipeline</h2>
+      <ol class="skill-items">
+        <li>Input Image → Preprocessing (224x224 RGB, Int8)</li>
+        <li>SRAM Tiling → Fetch initial 3x3 block and reuse cached data</li>
+        <li>Convolution → Booth Encoding → 4:2 Compressor → Final CPA Sum</li>
+        <li>Pooling → Downsampling → Dense Matrix Multiplication → Softmax Probabilities</li>
+        <li>Output → Real-time classification (e.g., Zebra: 98%)</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="about" id="benefits">
+    <div class="container">
+      <h2 class="section-title">Architecture Benefits</h2>
+      <ul class="project-highlights">
+        <li><strong>Memory Tiling:</strong> Reuses local pixel blocks in SRAM to reduce DRAM fetches.</li>
+        <li><strong>Radix-4 Booth Encoding:</strong> Cuts partial products by half compared to standard multipliers.</li>
+        <li><strong>4:2 Compressor Trees:</strong> Condenses four inputs into two outputs, shortening critical path.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Supervisors -->
+  <section class="skills" id="supervisors">
+    <div class="container">
+      <h2 class="section-title">Project Supervisors</h2>
+      <div class="skills-grid">
+        <div class="skill-category interactive-card"><h3>Dr. Khurram Javed</h3></div>
+        <div class="skill-category interactive-card"><h3>Dr. Hassan Saif</h3></div>
+        <div class="skill-category interactive-card"><h3>Dr. Rashid Ramzan</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engineering Team -->
+  <section class="team-section" id="team">
+    <div class="container">
+      <h2 class="section-title">Engineering Team</h2>
+      <div class="team-grid">
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch25/Ahmad_Shaban.png" alt="Ahmad Shaban" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Ahmad Shaban</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch25/Muhammad_Awab.png" alt="Awab Younas" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Awab Younas</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch25/Eeman.png" alt="Eeman" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Eeman</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch25/Fajar_Waseem.png" alt="Fajar Waseem" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Fajar Waseem</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch-placeholder.jpg" alt="Humail Nawaz" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Humail Nawaz</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch-placeholder.jpg" alt="Kausar Gul" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Kausar Gul</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch25/Muhammad_Mirza.png" alt="Muhammad Mirza" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Muhammad Mirza</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch25/Osama_Anees_Mirza.png" alt="Osama Mirza" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Osama Mirza</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch25/Salman_Qazi.png" alt="Salman Qazi" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Salman Qazi</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch25/Sana_Nazir.png" alt="Sana Nazir" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Sana Nazir</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
+        <div class="team-member-card interactive-card">
+          <div class="avatar-wrapper">
+            <img src="../../../assets/images/batch25/Umm_e_Kulsoom.png" alt="Ume Kalsoom" class="team-avatar">
+          </div>
+          <div class="member-info">
+            <h3>Ume Kalsoom</h3>
+            <span class="member-role">IC Design Engineer</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- References -->
+  <section class="skills" id="references">
+    <div class="container">
+      <h2 class="section-title">References</h2>
+      <ol class="project-highlights">
+        <li>S. Dargan, M. Kumar, M. R. Ayyagari, and G. Kumar, "A Survey of Deep Learning and Its Applications: A New Paradigm to Machine Learning," Arch. Comput. Methods Eng., vol. 27, no. 4, pp. 1071–1092, 2020, doi: 10.1007/s11831-019-09344-w.</li>
+        <li>W. Xie, C. Zhang, Y. Zhang, C. Hu, H. Jiang, and Z. Wang, "An Energy-Efficient FPGA-Based Embedded System for CNN Application," 2018 IEEE Int. Conf. Electron Devices Solid State Circuits, EDSSC 2018, Oct. 2018, doi: 10.1109/EDSSC.2018.8487057.</li>
+        <li>F. U. D. Farrukh, T. Xie, C. Zhang, and Z. Wang, "Optimization for Efficient Hardware Implementation of CNN on FPGA," Proc. 2018 IEEE Int. Conf. Integr. Circuits, Technol. Appl. ICTA 2018, pp. 88–89, Jul. 2018, doi: 10.1109/CICTA.2018.8706067.</li>
+        <li>T. Kowsalya, "A novel cognitive Wallace compressor based multi operand adders in CNN architecture for FPGA," J. Ambient Intell. Humaniz. Comput., vol. 12, no. 7, pp. 7263–7271, Aug. 2020, doi: 10.1007/s12652-020-02402-3.</li>
+        <li>F. U. D. Farrukh et al., "Power Efficient Tiny Yolo CNN using Reduced Hardware Resources based on Booth Multiplier and WALLACE Tree Adders," IEEE Open J. Circuits Syst., pp. 1–1, Jul. 2020, doi: 10.1109/ojcas.2020.3007334.</li>
+        <li>Y. E. Kim, J. O. Yoon, K. J. Cho, J. G. Chung, S. I. Cho, and S. S. Choi, "Efficient design of modified Booth multipliers for predetermined coefficients," Proc. - IEEE Int. Symp. Circuits Syst., pp. 2717–2720, 2006, doi: 10.1109/ISCAS.2006.1693185.</li>
+      </ol>
+    </div>
+  </section>
+
+</main>
 
 <footer class="footer">
   <div class="container">
