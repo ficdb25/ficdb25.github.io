@@ -506,7 +506,7 @@ if (batchGrid) {
         alt="${batchMembers[i]}"
         class="member-photo"
       />
-      <h4>${batchMembers[i]}</h4>
+      <h4>${batchMembers[i].replace(/_/g, " ")}</h4>
     `;
     batchGrid.appendChild(memberCard);
   }
