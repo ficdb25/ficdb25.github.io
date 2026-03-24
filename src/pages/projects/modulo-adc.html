@@ -1,129 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modulo Sampling ADC | Pakistan Semiconductor Summit '26</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Efficient CNN Multiplier Architecture | FAST ICD Batch 2025</title>
+  <meta name="description" content="High-performance, energy-efficient CNN multiplier architecture using Radix-4 Booth encoding and 4:2 compressors for real-time AI inference." />
+  <meta name="keywords" content="FAST University, ICD, Tapeout, VLSI, Semiconductor, Digital Design, Chip Design, FAST Batch 2025, Hardware Projects, Pakistan Semiconductor, AI, Artificial Intelligence, CNN, Multiplier, Accelerator" />
+  <meta name="author" content="FAST ICD Batch 2025" />
+
+  <meta property="og:title" content="FAST ICD Batch 2025 | Tapeout Projects" />
+  <meta property="og:description" content="Discover the semiconductor and digital design tapeout projects created by FAST ICD Batch 2025 students. Featuring innovative architectures, AI accelerators, and modern VLSI designs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ficdb25.github.io/" />
+  <meta property="og:image" content="https://ficdb25.github.io/assets/images/Link-Previews/CNN-Light-Screenshot.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FAST ICD Batch 2025 | Tapeout Projects" />
+  <meta name="twitter:description" content="High-performance, energy-efficient CNN multiplier architecture using Radix-4 Booth encoding and 4:2 compressors for real-time AI inference." />
+  <meta name="twitter:image" content="https://ficdb25.github.io/assets/images/Link-Previews/CNN-Light-Screenshot.png" />
+
+  <link rel="canonical" href="https://ficdb25.github.io/src/pages/projects/cnn-multiplier.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/images/icons/Icon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/images/icons/Icon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/images/icons/Icon.png" />
+  <meta name="theme-color" content="#0f172a" />
+ 
+  <link rel="icon" type="image/png" href="../../../assets/images/icons/Icon.png">
   <link rel="stylesheet" href="../../css/styles.css">
-  <link rel="icon" type="image/png" href="../../../assets/images/Icon.png">
+  <link rel="stylesheet" href="../../css/cnn_styles.css">
+  <script src="../../js/script.js" defer></script>
 </head>
 <body>
-
 <!-- Navbar -->
 <nav class="navbar">
   <div class="container nav-container">
-    <a href="../../../index.html" class="logo">Pakistan Semiconductor Summit '26</a>
+    <div class="logo">
+      <a href="../../../index.html">
+        <img src="../../../assets/images/icons/footer-right.png" alt="Summit Logo" class="logo-2d">
+      </a>
+    </div>
     <ul class="nav-links">
       <li><a href="../../../index.html#home" class="nav-link">Home</a></li>
-      <li><a href="../../../index.html#projects" class="nav-link">Projects</a></li>
-      <li><a href="../../../index.html#faculty" class="nav-link">Faculty</a></li>
-      <li><a href="../../../index.html#contact" class="nav-link">Contact</a></li>
+      <li><a href="#overview" class="nav-link">Overview</a></li>
+      <li><a href="#problem" class="nav-link">The Clipping Problem</a></li>
+      <li><a href="#modulo-logic" class="nav-link">Modulo Architecture</a></li>
+      <li><a href="#applications" class="nav-link">Applications</a></li>
+      <li><a href="#team" class="nav-link">Team</a></li>
     </ul>
+    <div class="theme-toggle" id="themeToggle">
+      <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg class="moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" stroke="currentColor" stroke-width="1"/></svg>
+    </div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
   </div>
 </nav>
 
-<!-- Hero / Title Section -->
-<section class="project-hero">
-  <div class="container">
-    <h1>Design of an Integrated Modulo Sampling ADC</h1>
-    <p class="subtitle">For SRDR and Passive Radar Applications</p>
+<section class="hero" id="overview">
+  <!-- <canvas id="modulo-adc-canvas"></canvas> -->
+  <div class="container hero-container">
+    <div class="hero-content">
+      <h1 class="hero-title">Integrated Modulo Sampling ADC</h1>
+      <p class="hero-subtitle">Unlimited Dynamic Range for Next-Gen Wideband Receivers</p>
+      <p class="hero-description">
+        Solving signal saturation in Software Defined Radios (SDR) and Passive Radar through folding architectures.
+      </p>
+      <div class="hero-buttons">
+        <a href="../../../index.html#projects" class="btn btn-secondary">Back to Projects</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Abstract / Overview -->
-<section class="project-overview">
+<section class="about" id="problem">
   <div class="container">
-    <h2>Abstract</h2>
+    <h2 class="section-title">The Challenge: Signal Clipping</h2>
     <p>
-      Analog-to-digital converters (ADCs) are essential for converting real-world analog signals into digital data.  
-      A critical parameter is the dynamic range (DR), which determines the ratio between the largest and smallest signals the ADC can resolve.  
-      Signals exceeding the DR cause clipping and degrade the quality of digitized signals.  
-      This project implements a **modulo-based folding architecture** to improve ADC dynamic range, enabling high-fidelity digitization even for large amplitude variations, useful for passive radar, software-defined radios, and wideband multi-standard receivers.
+      Conventional ADCs suffer from a limited <strong>Dynamic Range (DR)</strong>. When an input signal (like a powerful radar pulse) exceeds the ADC's voltage ceiling, the signal "clips," leading to permanent data loss and severe distortion. 
+      <br><br>
+      In modern environments—filled with multi-standard receivers and wideband interference—maintaining high fidelity without saturation is a critical bottleneck for signal processing.
     </p>
   </div>
 </section>
 
-<!-- Introduction -->
-<section class="project-introduction">
+<section class="projects" id="modulo-logic">
   <div class="container">
-    <h2>Introduction</h2>
+    <h2 class="section-title">The Modulo Solution</h2>
     <p>
-      The proposed **Modulo Sampling ADC** folds signals exceeding the ADC's dynamic range back into the valid range before sampling.  
-      Using a feedback mechanism, a trigger activates a voltage generator to correct the input signal dynamically, avoiding saturation.  
-      This allows the ADC to digitize high-dynamic-range signals as low-dynamic-range signals, preserving fidelity and enabling robust operation in wideband receivers and passive radar systems.
+      Instead of letting the signal saturate, our architecture applies a <strong>modulo operation</strong> in the analog domain. 
     </p>
-  </div>
-</section>
-
-<!-- Methodology -->
-<section class="project-methodology">
-  <div class="container">
-    <h2>Methodology</h2>
-    <ul>
-      <li>Design an integrated modulo ADC with folding architecture.</li>
-      <li>Implement trigger circuitry to detect signals beyond ADC dynamic range.</li>
-      <li>Use direct voltage feedback to bring signals back within range.</li>
-      <li>Sample the folded low-dynamic-range signal using standard ADC cores.</li>
-      <li>Validate design through simulation and prototype hardware evaluation.</li>
+    
+    <ul class="project-highlights">
+      <li><strong>Signal Folding:</strong> When the signal exceeds the DR, it is "folded" back into the ADC's range via a feedback mechanism.</li>
+      <li><strong>Trigger Mechanism:</strong> Custom circuitry detects threshold crossings and activates a voltage generator to add/subtract the necessary offset.</li>
+      <li><strong>Virtual Dynamic Range:</strong> This allows a low-range ADC to effectively capture high-amplitude signals, which are then digitally reconstructed.</li>
     </ul>
   </div>
 </section>
 
-<!-- Results / Achievements -->
-<section class="project-results">
+<section class="skills" id="applications">
   <div class="container">
-    <h2>Results & Benefits</h2>
-    <ul>
-      <li>Improved ADC dynamic range without increasing hardware complexity.</li>
-      <li>Prevention of signal clipping for high-amplitude analog inputs.</li>
-      <li>Applicability in wideband passive radar and SRDR systems.</li>
-      <li>High-fidelity digitization for software-defined radio and biomedical instrumentation.</li>
-      <li>Scalable architecture for integration into next-generation ADC designs.</li>
-    </ul>
+    <h2 class="section-title">Target Applications</h2>
+    <div class="skills-grid">
+      <div class="skill-category interactive-card">
+        <h3>Passive Radar</h3>
+        <p>Detecting targets using existing commercial signals without clipping.</p>
+      </div>
+      <div class="skill-category interactive-card">
+        <h3>Software Defined Radio (SDR)</h3>
+        <p>Adapting to massive signal variations across multi-standard bands.</p>
+      </div>
+      <div class="skill-category interactive-card">
+        <h3>Biomedical Instrumentation</h3>
+        <p>Resolving tiny biological signals in the presence of large DC offsets or noise.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- References -->
-<section class="project-references">
+<section class="skills" id="supervisors">
   <div class="container">
-    <h2>References</h2>
-    <ol>
-      <li>O. Ordentlich, G. Tabak, P. K. Hanumolu, A. C. Singer, G. W. Wornell, "A modulo-based architecture for analog-to-digital conversion," IEEE J. Sel. Topics Signal Process., vol. 12, no. 5, pp. 825–840, 2018.</li>
-      <li>Zhu, J., Ma, J., Liu, Z., Qu, F., Zhu, Z., Zhang, Q., "A Modulo Sampling Hardware Prototype and Reconstruction Algorithms Evaluation," IEEE Trans. Instrumentation and Measurement, 2025.</li>
-      <li>A. Weiss, E. Huang, O. Ordentlich, G. W. Wornell, "Blind modulo analog-to-digital conversion," IEEE Trans. Signal Process., vol. 70, pp. 4586–4601, 2022.</li>
-      <li>S. Mulleti, Y. C. Eldar, "Modulo sampling of FRI signals," IEEE Access, vol. 12, pp. 60369–60384, 2024.</li>
-      <li>S. Mulleti, E. Reznitskiy, S. Savariego, M. Namer, N. Glazer, Y. C. Eldar, "A hardware prototype of wideband high-dynamic range ADC," IET Circuits, Devices Syst., vol. 17, no. 4, pp. 181–192, 2023.</li>
-    </ol>
+    <h2 class="section-title">Project Supervisors</h2>
+    <div class="skills-grid">
+      <div class="skill-category interactive-card"><h3>Dr. Rashid Ramzan</h3></div>
+      <div class="skill-category interactive-card"><h3>Dr. Khurram Javed</h3></div>
+    </div>
   </div>
 </section>
 
-<!-- Team -->
-<section class="project-team">
+<section class="skills" id="team">
   <div class="container">
-    <h2>Team</h2>
-    <h3>Project Members</h3>
-    <ul class="team-members">
-      <li>Wasif Bhai</li>
-      <li>Zohaib</li>
-      <li>Zuhair</li>
-      <li>Callum</li>
-      <li>Zaki</li>
-      <li>Ahsan</li>
-      <li>Junaid</li>
-      <li>Ajmal</li>
-      <li>Muazam Iftekhar</li>
-      <li>Faisal Shakar</li>
-      <li>Kinza</li>
-    </ul>
+    <h2 class="section-title">Engineering Team</h2>
+    <div class="skills-grid">
+      <div class="skill-category interactive-card"><h3>Wasif Bhai</h3></div>
+      <div class="skill-category interactive-card"><h3>Zohaib</h3></div>
+      <div class="skill-category interactive-card"><h3>Zuhair</h3></div>
+      <div class="skill-category interactive-card"><h3>Callum</h3></div>
+      <div class="skill-category interactive-card"><h3>Zaki</h3></div>
+      <div class="skill-category interactive-card"><h3>Ahsan</h3></div>
+      <div class="skill-category interactive-card"><h3>Junaid</h3></div>
+      <div class="skill-category interactive-card"><h3>Ajmal</h3></div>
+      <div class="skill-category interactive-card"><h3>Muazam Iftekhar</h3></div>
+      <div class="skill-category interactive-card"><h3>Faisal Shakar</h3></div>
+      <div class="skill-category interactive-card"><h3>Kinza</h3></div>
+    </div>
   </div>
 </section>
 
-<!-- Back Button -->
-<section class="project-back">
+<footer class="footer">
   <div class="container">
-    <a href="../../../index.html#projects" class="btn btn-primary">Back to Projects</a>
+    <p>&copy; 2026 Integrated Modulo Sampling ADC Project. FAST-NU Islamabad.</p>
+    <p>Advancing Dynamic Range for SDR & Radar Applications.</p>
   </div>
-</section>
-
+</footer>
 </body>
 </html>

@@ -1,136 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>4-Bit AC Nano-Processor | Pakistan Semiconductor Summit '26</title>
-  <link rel="stylesheet" href="../../../assets/css/styles.css">
-  <link rel="icon" type="image/png" href="../../../assets/images/Icon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Efficient CNN Multiplier Architecture | FAST ICD Batch 2025</title>
+  <meta name="description" content="High-performance, energy-efficient CNN multiplier architecture using Radix-4 Booth encoding and 4:2 compressors for real-time AI inference." />
+  <meta name="keywords" content="FAST University, ICD, Tapeout, VLSI, Semiconductor, Digital Design, Chip Design, FAST Batch 2025, Hardware Projects, Pakistan Semiconductor, AI, Artificial Intelligence, CNN, Multiplier, Accelerator" />
+  <meta name="author" content="FAST ICD Batch 2025" />
+
+  <meta property="og:title" content="FAST ICD Batch 2025 | Tapeout Projects" />
+  <meta property="og:description" content="Discover the semiconductor and digital design tapeout projects created by FAST ICD Batch 2025 students. Featuring innovative architectures, AI accelerators, and modern VLSI designs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ficdb25.github.io/" />
+  <meta property="og:image" content="https://ficdb25.github.io/assets/images/Link-Previews/CNN-Light-Screenshot.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FAST ICD Batch 2025 | Tapeout Projects" />
+  <meta name="twitter:description" content="High-performance, energy-efficient CNN multiplier architecture using Radix-4 Booth encoding and 4:2 compressors for real-time AI inference." />
+  <meta name="twitter:image" content="https://ficdb25.github.io/assets/images/Link-Previews/CNN-Light-Screenshot.png" />
+
+  <link rel="canonical" href="https://ficdb25.github.io/src/pages/projects/cnn-multiplier.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/images/icons/Icon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/images/icons/Icon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/images/icons/Icon.png" />
+  <meta name="theme-color" content="#0f172a" />
+ 
+  <link rel="icon" type="image/png" href="../../../assets/images/icons/Icon.png">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../../css/cnn_styles.css">
+  <script src="../../js/script.js" defer></script>
 </head>
 <body>
-
 <!-- Navbar -->
 <nav class="navbar">
   <div class="container nav-container">
-    <a href="../../../index.html" class="logo">Pakistan Semiconductor Summit '26</a>
+    <div class="logo">
+      <a href="../../../index.html">
+        <img src="../../../assets/images/icons/footer-right.png" alt="Summit Logo" class="logo-2d">
+      </a>
+    </div>
     <ul class="nav-links">
       <li><a href="../../../index.html#home" class="nav-link">Home</a></li>
-      <li><a href="../../../index.html#projects" class="nav-link">Projects</a></li>
-      <li><a href="../../../index.html#faculty" class="nav-link">Faculty</a></li>
-      <li><a href="../../../index.html#contact" class="nav-link">Contact</a></li>
+      <li><a href="#overview" class="nav-link">Overview</a></li>
+      <li><a href="#challenge" class="nav-link">The Challenge</a></li>
+      <li><a href="#technology" class="nav-link">AC Logic Tech</a></li>
+      <li><a href="#architecture" class="nav-link">Architecture</a></li>
+      <li><a href="#impact" class="nav-link">Impact</a></li>
+      <li><a href="#team" class="nav-link">Team</a></li>
     </ul>
+    <div class="theme-toggle" id="themeToggle">
+      <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg class="moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" stroke="currentColor" stroke-width="1"/></svg>
+    </div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
   </div>
 </nav>
 
-<!-- Hero / Title Section -->
-<section class="project-hero">
-  <div class="container">
-    <h1>Design of a 4-Bit AC Nano-Processor</h1>
-    <p class="subtitle">For Self-Powered Biomedical and Smart Dust Applications</p>
-  </div>
-</section>
+  <!-- Project Hero -->
+  <section class="hero" id="overview">
+    <!-- <canvas id="nano-processor-hero-canvas"></canvas> -->
+    <div class="container hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">4-Bit AC Nano-Processor</h1>
+        <p class="hero-subtitle">Rectifier-less, Battery-free Computing for Smart Dust</p>
+        <p class="hero-description">
+          A revolutionary adiabatic processor deriving power and data synchronization directly from RF fields for implantable biomedical devices.
+        </p>
+        <div class="hero-buttons">
+          <a href="../../../index.html#projects" class="btn btn-secondary">Back to Projects</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- Abstract / Overview -->
-<section class="project-overview">
+<section class="about" id="challenge">
   <div class="container">
-    <h2>Abstract</h2>
+    <h2 class="section-title">The Power Bottleneck</h2>
     <p>
-      The development of a 4-bit AC nano-processor represents a significant shift in the design of self-powered IoT nodes and "smart dust."  
-      Traditional wireless power transfer systems are limited by the inefficiency of RF-to-DC rectifiers and the large storage capacitors required.  
-      The AC-logic family utilizes the signal phase to represent logic states (0° = High, 180° = Low), while QRF-only logic leverages quadrature signals (I & Q) for timing control such as pre-charge, hold, and evaluate.  
-      This rectifier-less architecture removes the most power-hungry components of conventional designs, enabling ultra-low power operation.
+      Traditional wireless power transfer (WPT) is limited by the inefficiency of RF-to-DC rectifiers and the massive silicon area required for storage capacitors. For "Smart Dust" and internal biomedical implants, these components are too bulky and power-hungry. 
+      <br><br>
+      Our project solves this by eliminating the rectifier entirely, using <strong>Quadrature RF-Only (QRF)</strong> logic to process information in the phase domain.
     </p>
   </div>
 </section>
 
-<!-- Introduction -->
-<section class="project-introduction">
+<section class="projects" id="technology">
   <div class="container">
-    <h2>Introduction</h2>
+    <h2 class="section-title">AC-Logic & QRF Families</h2>
     <p>
-      Experimental validation across different CMOS nodes demonstrates the suitability of AC and QRF logic families for complex processing.  
-      In 65 nm CMOS, fundamental AC gates (NOT, NAND, NOR) consume between 8.2 nW and 20.8 nW.  
-      Integrating these components into a 4-bit nano-processor provides a framework for implantable biomedical devices and autonomous sensors, deriving power and data synchronization directly from transmitted RF fields.  
-      This simplifies single-chip wirelessly powered applications and ensures long-term operation in battery-free environments.
+      We utilize the inherent adiabatic nature of the proposed logic cells to achieve ultra-low power consumption:
     </p>
-  </div>
-</section>
-
-<!-- Methodology -->
-<section class="project-methodology">
-  <div class="container">
-    <h2>Methodology</h2>
-    <ul>
-      <li>Design and simulation of AC and QRF logic cells for low-power operations.</li>
-      <li>Integration of AC logic gates into a 4-bit nano-processor schematic.</li>
-      <li>Experimental validation of fundamental gates across CMOS nodes.</li>
-      <li>Optimization of phase-domain signal propagation for reliable processing.</li>
-      <li>Preparation for layout refinement and eventual tapeout.</li>
+    
+    <ul class="project-highlights">
+      <li><strong>Phase-Based States:</strong> Logic 0 and 1 are represented by 0° and 180° phases respectively.</li>
+      <li><strong>QRF Timing:</strong> Quadrature (I and Q) signals manage Pre-charge, Hold, and Evaluate phases.</li>
+      <li><strong>Nano-Watt Consumption:</strong> Fundamental gates (NOT, NAND, NOR) validated at 8.2 nW to 20.8 nW in 65nm CMOS.</li>
     </ul>
   </div>
 </section>
 
-<!-- Results / Achievements -->
-<section class="project-results">
+<section class="skills" id="architecture">
   <div class="container">
-    <h2>Results & Benefits</h2>
-    <ul>
-      <li>Ultra-low power consumption of 8.2–20.8 nW per gate in 65 nm CMOS.</li>
-      <li>Battery-free operation using RF-derived power and timing.</li>
-      <li>Feasibility for implantable biomedical devices and smart dust applications.</li>
-      <li>Single-chip solution simplifies hardware and ensures long-term reliability.</li>
-      <li>Next steps: schematic refinement and tapeout preparation.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- References -->
-<section class="project-references">
-  <div class="container">
-    <h2>References</h2>
-    <ol>
-      <li>R. Ramzan, A. Beg, S. A. Jawed, F. Khan, M. Aaquib, M. Junaid, "Quadrature RF-Only Logic Family for Single-Chip Self-Powered Transceivers," FAST-NU, Islamabad, Pakistan.</li>
-      <li>"AC-Logic Family for Wireless Powered Smart Dust and IoT Applications," 36th IEEE Int. System-on-Chip Conference (SOCC), 2023.</li>
-      <li>S. B. Baker, W. Xiang, L. Atkinson, "Internet of Things for Smart Healthcare: Technologies, Challenges, and Opportunities," IEEE Access, vol. 5, pp. 26521–26544, 2017.</li>
-      <li>W. Arshad, R. Ramzan, A. Beg, N. Bastaki, "Comparison and design of VCOs for ultra-low power CMOS temperature sensors," IEEE ICCSPA, 2015.</li>
-      <li>J. Wenck, R. Amirtharajah, J. Collier, J. Siebert, "AC power supply circuits for energy harvesting," IEEE Symposium on VLSI Circuits, pp. 92–93, 2007.</li>
+    <h2 class="section-title">Implementation Pipeline</h2>
+    <ol class="skill-items">
+      <li><strong>RF Energy Harvesting:</strong> Direct AC power extraction without DC conversion.</li>
+      <li><strong>Phase Synchronization:</strong> Deriving timing directly from the transmitted RF field.</li>
+      <li><strong>4-Bit Core:</strong> Processing logic via AC-Logic cells for arithmetic and control.</li>
+      <li><strong>Ultra-Low Power Layout:</strong> Optimized 65nm CMOS cells for minimal leakage and maximum adiabatic gain.</li>
+      <li><strong>Tapeout Ready:</strong> US Patent filed; currently refining layout for silicon fabrication.</li>
     </ol>
   </div>
 </section>
 
-<!-- Team -->
-<section class="project-team">
+<section class="about" id="impact">
   <div class="container">
-    <h2>Team</h2>
-    <h3>Project Members</h3>
-    <ul class="team-members">
-      <li>Humbal Hammad</li>
-      <li>Muhammad Uzair THE ULTIMATE CR</li>
-      <li>Sharukh</li>
-      <li>Umair</li>
-      <li>Fatimah</li>
-      <li>Baber</li>
-      <li>Arsalan</li>
-      <li>Ejaz VPN</li>
-      <li>Umm e Kulsoom Hospital Ki Dost</li>
-    </ul>
-
-    <h3>Supervisors</h3>
-    <ul class="team-supervisors">
-      <li>Sir Hasan Saif</li>
-      <li>Sir Rashid Ramzan</li>
-      <li>Sir Usman</li>
-      <li>Sir Usman The Second</li>
+    <h2 class="section-title">Key Advantages</h2>
+    <ul class="project-highlights">
+      <li><strong>Battery-Free:</strong> Ideal for environments where battery replacement is impossible (e.g., deep tissue).</li>
+      <li><strong>Size Reduction:</strong> Eliminates bulky storage capacitors and heavy rectifiers.</li>
+      <li><strong>Privacy & Longevity:</strong> Secure, "in-house" computing for long-term autonomous sensing.</li>
     </ul>
   </div>
 </section>
 
-<!-- Back Button -->
-<section class="project-back">
+<section class="skills" id="supervisors">
   <div class="container">
-    <a href="../../../index.html#projects" class="btn btn-primary">Back to Projects</a>
+    <h2 class="section-title">Project Supervisors</h2>
+    <div class="skills-grid">
+      <div class="skill-category interactive-card"><h3>Dr. Hassan Saif</h3></div>
+      <div class="skill-category interactive-card"><h3>Dr. Rashid Ramzan</h3></div>
+      </div>
   </div>
 </section>
 
+<section class="skills" id="team">
+  <div class="container">
+    <h2 class="section-title">Engineering Team</h2>
+    <div class="skills-grid">
+      <div class="skill-category interactive-card"><h3>Humbal Hammad</h3></div>
+      <div class="skill-category interactive-card"><h3>Muhammad Uzair<span class="member-tag">THE ULTIMATE CR</span></h3></div>
+      <div class="skill-category interactive-card"><h3>Sharukh</h3></div>
+      <div class="skill-category interactive-card"><h3>Umair</h3></div>
+      <div class="skill-category interactive-card"><h3>Baber</h3></div>
+      <div class="skill-category interactive-card"><h3>Fatimah</h3></div>
+      <div class="skill-category interactive-card"><h3>Arsalan</h3></div>
+      <div class="skill-category interactive-card"><h3>Ejaz<span class="member-tag">VPN</span></h3></div>
+      <div class="skill-category interactive-card"><h3>Umm e Kulsoom<span class="member-tag">Hospital Ki Dost</span></h3></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 4-Bit AC Nano-Processor Project. FAST-NU Islamabad.</p>
+    <p>Based on: "Quadrature RF-Only Logic Family for Single-Chip Self-Powered Transceivers"</p>
+  </div>
+</footer>
 </body>
 </html>
