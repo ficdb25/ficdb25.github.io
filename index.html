@@ -171,9 +171,22 @@
     <!-- Batch 2025 Section -->
     <section id="batch" class="batch">
       <div class="group-photo-container">
-        <img src="assets/images/batch-group-photo-compressed.jxl" alt="FAST ICD Batch 2025 Group Photo" 
-        class="group-photo-image" loading="lazy"/>
+        <picture>
+          <source srcset="assets/images/batch-group-photo-compressed.jxl" type="image/jxl">
+          <source srcset="assets/images/batch-group-photo-compressed.avif" type="image/avif">
+          <source srcset="assets/images/batch-group-photo.jpg" type="image/jpeg">
+          <img 
+            src="assets/images/batch-group-photo.jpg" 
+            alt="FAST ICD Batch 2025 Group Photo" 
+            class="group-photo-image" 
+            loading="lazy"
+            decoding="async"
+            width="7740" 
+            height="3053"
+          />
+        </picture>
       </div>
+      
       <div class="container batch-content">
         <h2 class="section-title">Batch 2025 Members</h2>
         <p class="batch-text">Meet the talented engineers behind the FAST ICD Batch 2025 tapeout projects.</p>
