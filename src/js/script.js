@@ -1,3 +1,4 @@
+"use strict";
 // ==================== DOM ELEMENTS & NAVIGATION ==================== //
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
