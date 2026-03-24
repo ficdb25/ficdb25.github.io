@@ -488,6 +488,7 @@ const batchMembers = [
   "Faisal_Shakar",
   "Muhammad_Arlasan",
   "Eeman",
+  "Fajar_Waseem",
   "Sana_Nazir",
   "Immama_Arif",
   "Fatimah",
