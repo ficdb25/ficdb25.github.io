@@ -497,16 +497,16 @@ const batchMembers = [
 
 const batchGrid = document.getElementById("batchGrid");
 if (batchGrid) {
-  for (let i = 1; i <= 32; i++) {
+  for (let i = 0; i < batchMembers.length; i++) {
     const memberCard = document.createElement("div");
     memberCard.className = "batch-member interactive-card";
     memberCard.innerHTML = `
       <img
-        src="../../assets/images/batch25/${batchMembers[i - 1]}.png"
-        alt="${batchMembers[i - 1]}"
+        src="../../assets/images/batch25/${batchMembers[i]}.png"
+        alt="${batchMembers[i]}"
         class="member-photo"
       />
-      <h4>${batchMembers[i - 1]}</h4>
+      <h4>${batchMembers[i]}</h4>
     `;
     batchGrid.appendChild(memberCard);
   }
