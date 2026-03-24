@@ -44,10 +44,11 @@
     <ul class="nav-links">
       <li><a href="../../../index.html#home" class="nav-link">Home</a></li>
       <li><a href="#overview" class="nav-link">Overview</a></li>
-      <li><a href="#challenge" class="nav-link">The Challenge</a></li>
+      <li><a href="#challenge" class="nav-link">Description</a></li>
       <li><a href="#technology" class="nav-link">AC Logic Tech</a></li>
       <li><a href="#architecture" class="nav-link">Architecture</a></li>
       <li><a href="#team" class="nav-link">Team</a></li>
+      <li><a href="#references" class="nav-link">References</a></li>
     </ul>
     <div class="theme-toggle" id="themeToggle">
       <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -74,11 +75,35 @@
 
 <section class="about" id="challenge">
   <div class="container">
-    <h2 class="section-title">Project Scope & Limitation</h2>
+    <h2 class="section-title">Project Description</h2>
     <p>
-      Traditional Wireless Power Transfer (WPT) systems suffer from two key limitations: RF-to-DC rectifier inefficiency and large storage capacitor area requirements. This severely hinders ultra-low-power applications like IoT nodes, biomedical implants, and wireless sensors.
-      <br><br>
-      Our architecture resolves this by deriving power and synchronization directly from the RF field, supporting phase-domain computation to enable reliable, long-term, battery-free operation.
+      The development of a 4-bit AC nano-processor represents a significant shift in the design of self-powered 
+      IoT nodes and "smart dust." Traditional wireless power transfer (WPT) systems are hindered by the 
+      inefficiency of RF-to-DC rectifiers and the substantial area required for storage capacitors. The AC-logic 
+      family utilizes the phase of the signal to represent logic states 0∘ for High and 180∘ for Low while the QRF
+      only logic utilizes quadrature (I and Q) signals to manage timing phases such as pre-charge, hold, and 
+      evaluate. This "rectifier-less" architecture eliminates the most power-hungry components of conventional 
+      designs.
+    </p>
+    <p>
+      Experimental validation of these logic families across different CMOS nodes demonstrates their suitability 
+      for complex processing tasks. In 65 nm CMOS, the fundamental AC gates (NOT, NAND, and NOR) 
+      consume as little as 8.2 nW to 20.8 nW.
+    </p>
+    <p>
+      The integration of these AC and QRF components into a 4-bit nano-processor provides a robust framework 
+      for next-generation implantable bio-medical devices and autonomous sensors. By leveraging the inherent 
+      adiabatic nature of the proposed logic cells, the processor can derive both its power and data 
+      synchronization directly from transmitted RF field. This design not only simplifies the complexity of single
+      chip wirelessly powered applications but also ensures long-term operation in environments where battery 
+      replacement is impossible. The successful measurement of these fabricated single cell design confirms that 
+      logic information can be reliably processed in the phase domain, paving the way for fully functional, 
+      battery-free nano-computing.
+    </p>
+    <p>
+      Here in this project we aim to make the 4-bit ultra-low power nano-prcessor based on these AC-Cells. The 
+      schematic work has been done for one version, and US patent filed. The next step is the refinement of the 
+      schematic of the layout and tapeout.
     </p>
   </div>
 </section>
@@ -161,7 +186,7 @@
     <ul class="project-highlights">
       <li><strong>Verified Cells:</strong> Fundamental logic cells (inverters, NAND, NOR, XOR, DFF) for both approaches have been designed and verified in 65 nm CMOS.</li>
       <li><strong>Architecture Basis:</strong> The design follows the 4-Bit Intel4004 Architecture, featuring memory, ALU, stack, and register multiplexers.</li>
-      <li><strong>Next Steps:</strong> Integrating the validated logic cells into a complete 4-bit AC nano-processor for system-level evaluation.</li>
+      <li><strong>Current Status:</strong> The schematic work has been done for one version, and US patent filed. The next step is the refinement of the schematic, layout, and tapeout.</li>
       <li><strong>Fabrication:</strong> Physical fabrication and experimental validation of the rectifier-less architecture in 65 nm CMOS are planned.</li>
     </ul>
   </div>
@@ -193,6 +218,19 @@
       <div class="skill-category interactive-card"><h3>Shahrukh Hussain</h3></div>
       <div class="skill-category interactive-card"><h3>Uzair Sharif</h3></div>
     </div>
+  </div>
+</section>
+
+<section class="skills" id="references">
+  <div class="container">
+    <h2 class="section-title">References</h2>
+    <ol class="project-highlights">
+      <li>R. Ramzan, A. Beg, S. A. Jawed, F. Khan, M. Aaquib, and M. Junaid, "Quadrature RF-Only Logic Family for Single-Chip Self-Powered Transceivers," National University of Computer and Emerging Sciences (FAST-NU), Islamabad, Pakistan.</li>
+      <li>"AC-Logic Family for Wireless Powered Smart Dust and IoT Applications," Proceedings of the 36th IEEE International System-on-Chip Conference (SOCC), 2023.</li>
+      <li>S. B. Baker, W. Xiang and L. Atkinson, "Internet of Things for Smart Healthcare: Technologies, Challenges, and Opportunities," IEEE Access, vol. 5, pp. 26521-26544, 2017.</li>
+      <li>W. Arshad, R. Ramzan, A. Beg and N. Bastaki, "Comparison and design of VCOs for ultra-low power CMOS temperature sensors," IEEE International Conference on Communications, Signal Processing, and their Applications (ICCSPA), 2015.</li>
+      <li>J. Wenck, R. Amirtharajah, J. Collier, and J. Siebert, "AC power supply circuits for energy harvesting," IEEE Symposium on VLSI Circuits, pp. 92-93, 2007.</li>
+    </ol>
   </div>
 </section>
 
