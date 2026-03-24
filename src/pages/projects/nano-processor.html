@@ -91,61 +91,67 @@
     </p>
     
     <div class="animation-container">
-      <div class="diagram-card">
-        <h3 style="margin-bottom: 10px;">AC Logic (180&deg;)</h3>
-        <p style="font-size: 0.9rem; margin-bottom: 15px;">Uses 180&deg; out-of-phase differential sinusoids. The instantaneous voltage difference defines a valid logic evaluation region.</p>
-        <svg class="wave-svg" viewBox="0 0 200 100">
-          <path class="path-wave1" d="M 0 50 Q 25 0, 50 50 T 100 50 T 150 50 T 200 50" />
-          <path class="path-wave2" d="M 0 50 Q 25 100, 50 50 T 100 50 T 150 50 T 200 50" />
-        </svg>
+      <div class="diagram-card interactive-card">
+        <h3>AC Logic (180&deg;)</h3>
+        <p class="diagram-desc">Uses 180&deg; out-of-phase differential sinusoids. The instantaneous voltage difference defines a valid logic evaluation region.</p>
+        <div class="svg-wrapper">
+          <svg class="wave-svg" viewBox="0 0 200 100">
+            <path class="path-wave1" d="M 0 50 Q 25 0, 50 50 T 100 50 T 150 50 T 200 50" />
+            <path class="path-wave2" d="M 0 50 Q 25 100, 50 50 T 100 50 T 150 50 T 200 50" />
+          </svg>
+        </div>
       </div>
 
-      <div class="diagram-card">
-        <h3 style="margin-bottom: 10px;">Quadrature RF (90&deg;)</h3>
-        <p style="font-size: 0.9rem; margin-bottom: 15px;">Employs 90&deg; QRF signals to create distinct precharge, hold, and evaluation phases, avoiding standard DC generation.</p>
-        <svg class="wave-svg" viewBox="0 0 200 100">
-          <path class="path-wave1" d="M 0 50 Q 25 0, 50 50 T 100 50 T 150 50 T 200 50" />
-          <path class="path-wave2" d="M 0 0 Q 25 50, 50 100 T 100 0 T 150 100 T 200 0" />
-        </svg>
+      <div class="diagram-card interactive-card">
+        <h3>Quadrature RF (90&deg;)</h3>
+        <p class="diagram-desc">Employs 90&deg; QRF signals to create distinct precharge, hold, and evaluation phases, avoiding standard DC generation.</p>
+        <div class="svg-wrapper">
+          <svg class="wave-svg" viewBox="0 0 200 100">
+            <path class="path-wave1" d="M 0 50 Q 25 0, 50 50 T 100 50 T 150 50 T 200 50" />
+            <path class="path-wave2" d="M 0 0 Q 25 50, 50 100 T 100 0 T 150 100 T 200 0" />
+          </svg>
+        </div>
       </div>
     </div>
 
-    <table class="comparison-table">
-      <thead>
-        <tr>
-          <th>Aspect</th>
-          <th>AC Logic</th>
-          <th>Quadrature RF</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Type</strong></td>
-          <td>Two Sinusoids Signal 180&deg; out of phase</td>
-          <td>Quadrature RF signals (I & Q) 90&deg; apart</td>
-        </tr>
-        <tr>
-          <td><strong>Topology</strong></td>
-          <td>Static CMOS Structure (PUN + PDN)</td>
-          <td>Dynamic Logic Architecture</td>
-        </tr>
-        <tr>
-          <td><strong>Regions</strong></td>
-          <td>Valid, Invalid</td>
-          <td>Precharge, Hold, Evaluate</td>
-        </tr>
-        <tr>
-          <td><strong>Isolation</strong></td>
-          <td>Series PMOS with body-biasing technique</td>
-          <td>Double Isolation Transistor</td>
-        </tr>
-        <tr>
-          <td><strong>Efficiency</strong></td>
-          <td>53.9% Energy Saved at System Level</td>
-          <td>60% Less Power Consumption</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-container">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Aspect</th>
+            <th>AC Logic</th>
+            <th>Quadrature RF</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Type</strong></td>
+            <td>Two Sinusoids Signal 180&deg; out of phase</td>
+            <td>Quadrature RF signals (I & Q) 90&deg; apart</td>
+          </tr>
+          <tr>
+            <td><strong>Topology</strong></td>
+            <td>Static CMOS Structure (PUN + PDN)</td>
+            <td>Dynamic Logic Architecture</td>
+          </tr>
+          <tr>
+            <td><strong>Regions</strong></td>
+            <td>Valid, Invalid</td>
+            <td>Precharge, Hold, Evaluate</td>
+          </tr>
+          <tr>
+            <td><strong>Isolation</strong></td>
+            <td>Series PMOS with body-biasing technique</td>
+            <td>Double Isolation Transistor</td>
+          </tr>
+          <tr>
+            <td><strong>Efficiency</strong></td>
+            <td>53.9% Energy Saved at System Level</td>
+            <td>60% Less Power Consumption</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
 
