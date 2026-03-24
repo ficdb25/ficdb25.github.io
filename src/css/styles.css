@@ -1027,13 +1027,39 @@ h3 {
   inset: 0;
   z-index: 0;
 }
-
-.group-photo-image {
+.placeholder-blur {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.35; /* fades image so text is readable */
+  filter: blur(20px);
+  transform: scale(1.1); /* Prevents white edges from the blur */
+  opacity: 0.35;         /* Match your design opacity */
+  transition: opacity 1s ease-out;
 }
+
+.group-photo-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+/* Initial state: Hidden */
+  opacity: 0; 
+  transition: opacity 1.2s ease-in-out;
+}
+
+/* State when high-res image finishes loading */
+.group-photo-image.loaded {
+  opacity: 0.35; /* Fades in to your desired readable level */
+}
+
+/* Optional: Fade out placeholder after high-res is ready */
+.group-photo-image.loaded + .placeholder-blur {
+  opacity: 0;
+}
+
 
 /* text content layer */
 .batch-content {

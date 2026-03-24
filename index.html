@@ -170,6 +170,8 @@
     <!-- Batch 2025 Section -->
     <section id="batch" class="batch">
       <div class="group-photo-container">
+        <img src="assets/images/batch-placeholder.jpg" class="placeholder-blur" alt="" aria-hidden="true">
+
         <picture>
           <source srcset="assets/images/batch-group-photo-compressed.jxl" type="image/jxl">
           <source srcset="assets/images/batch-group-photo-compressed.avif" type="image/avif">
@@ -180,8 +182,7 @@
             class="group-photo-image" 
             loading="lazy"
             decoding="async"
-            width="7740" 
-            height="3053"
+            onload="this.classList.add('loaded')"
           />
         </picture>
       </div>
