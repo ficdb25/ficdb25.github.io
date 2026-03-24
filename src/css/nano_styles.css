@@ -153,6 +153,16 @@ svg.wave-svg {
   flex-shrink: 0;
 }
 
+/* Team Photos */
+.team-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 2px solid var(--accent-primary);
+}
+
 /* Custom Comparison Table */
 .table-container {
   overflow-x: auto;
