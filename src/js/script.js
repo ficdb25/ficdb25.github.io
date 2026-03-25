@@ -471,7 +471,7 @@ const batchMembers = [
   "Humbal_Hammad",
   "Muhammad_Uzair",
   "Osama_Anees_Mirza",
-  "Ejaz_Ahmad_Khan",
+  "Ejaz_Ahmad_Khanzada",
   "Ajmal_Khan",
   "Salman_Qazi",
   "Muhammad_Zuhair_Ansari",
@@ -481,12 +481,12 @@ const batchMembers = [
   "Ahsan_Zia",
   "Muhammad_Awab",
   "Wasif_Mehmood",
-  "Zaki",
+  "Zaki_Ul_Hassan",
   "Junaid_Razaq",
   "Ahmad_Shaban",
   "Zohaib_Saleem",
   "Faisal_Shakar",
-  "Muhammad_Arlasan",
+  "Muhammad_Arslan",
   "Eeman",
   "Fajar_Waseem",
   "Sana_Nazir",
@@ -495,6 +495,7 @@ const batchMembers = [
   "Kinza",
   "Umm_e_Kulsoom",
   "Hadeesa",
+  "Kousar_Gul"
 ];
 
 const batchGrid = document.getElementById("batchGrid");
