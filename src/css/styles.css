@@ -598,6 +598,13 @@ section:nth-child(even) {
   text-shadow: var(--glow);
 }
 
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Adds a nice space between the icon and the text */
+}
 /* ==================== EDUCATION SECTION ==================== */
 .education-timeline {
   position: relative;
@@ -901,6 +908,33 @@ h3 {
   transform: translateY(-2px);
 }
 
+/* ==================== FACULTY SECTION ==================== */
+
+.faculty-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;       /* Makes the image a perfect circle */
+  object-fit: cover;        /* Prevents the faces from looking squished */
+  margin-bottom: 15px;
+  border: 3px solid #eee;   /* Optional: adds a nice clean border */
+}
+
+.cv-link {
+  display: inline-flex;
+  align-items: center;      /* Vertically centers the icon with the text */
+  gap: 8px;                 /* Adds space between the icon and the text */
+  margin-top: 10px;
+  text-decoration: none;
+  color: #007bff;           /* Adjust this color to match your theme */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.cv-link:hover {
+  color: #0056b3;           /* Darkens slightly on hover */
+  text-decoration: underline;
+}
+
 /* ==================== CONTACT SECTION ==================== */
 .contact {
   text-align: center;
@@ -926,7 +960,7 @@ h3 {
 }
 
 .contact-item {
-  background: rgba(45, 50, 44, 0.5);
+background: rgba(45, 50, 44, 0.5);
   border: 1px solid var(--border-main);
   padding: 2rem;
   border-radius: 8px;
@@ -937,7 +971,13 @@ h3 {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  
+  /* --- NEW ADDITIONS FOR EQUAL HEIGHT --- */
+  height: 100%;              /* Forces the box to fill the grid row */
+  justify-content: center;   /* Centers the content vertically */
+  box-sizing: border-box;    /* Ensures padding doesn't break the height */
 }
+
 
 :root.light-mode .contact-item {
   background: rgba(243, 243, 242, 0.8);
@@ -1086,7 +1126,7 @@ h3 {
 }
 
 :root.light-mode .batch-member {
-  background: rgba(4, 11, 17, 0.6);
+  background: var(--border-main);
 }
 
 .member-photo {
