@@ -487,15 +487,17 @@ const batchMembers = [
   "Zohaib_Saleem",
   "Faisal_Shakar",
   "Muhammad_Arslan",
-  "Eeman",
+  "Muazzam_Iftikhar",
+  "Eeman_Shaikh",
   "Fajar_Waseem",
   "Sana_Nazir",
   "Immama_Arif",
-  "Fatimah",
+  "Fatima_Akhtar",
   "Kinza",
   "Umm_e_Kulsoom",
   "Hadeesa",
-  "Kousar_Gul"
+  "Kousar_Gul",
+  "Humail_Nawaz"
 ];
 
 const batchGrid = document.getElementById("batchGrid");
